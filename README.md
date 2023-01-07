@@ -10,7 +10,7 @@
 - Faire une démonstration de la navigation du site au moyen du clavier pour qu’on s’assure qu'il est utilisable par les lecteurs d'écran.
 - Utiliser un pattern Factory Method, ça sera idéal pour créer les media en distinguant les vidéos des photos.
 
-## Les informations forunies :
+## Les informations fournies :
 
 - Les notes de réunions (disponible dans ./document/Notes+de+reunion.pdf)
 - Les maquettes (disponibles dans ./documents/figma00X.jpg)
@@ -20,28 +20,23 @@
 
 ## Les Etapes :
 
-- Prendre en main les éléments, la maquette et
-  la base de code
+- Prendre en main les éléments, la maquette et la base de code
 - Importer les datas
 - Intégrer la page d'accueil
-- Gérer la navigation entre la page accueil et la
-  page photographe
-- Afficher le contenu statique de la page
-  photographe
+- Gérer la navigation entre la page accueil et la page photographe
+- Afficher le contenu statique de la page photographe
 - Créer la modale de contact
 - Gérer les médias de la Lightbox
 - Afficher et gérer les likes
 - Créer le système de tri
 - Vérifier le code avec un linter
 
-## Fonctionnalités à mettre en place
+## Fonctionnalités à mettre en place :
 
 ### Page d'accueil :
 
-- Liste de tous les photographes avec leur nom, leur slogan, leur
-  localisation, leur prix/heure et une image miniature de leur choix.
-  -Lorsque l'utilisateur clique sur la vignette d'un photographe, il est
-  amené à sa page.
+- Liste de tous les photographes avec leur nom, leur slogan, leur localisation, leur prix/heure et une image miniature de leur choix.
+- Lorsque l'utilisateur clique sur la vignette d'un photographe, il est amené à sa page.
 
 ### Page des photographes :
 
