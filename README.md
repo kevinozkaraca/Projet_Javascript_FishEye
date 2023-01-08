@@ -76,3 +76,10 @@
 - Une version moderne (ES6 ou supérieure) de JavaScript est utilisée et les fonctionnalités obsolètes ne sont pas utilisées.
 - Le code est lisible. Il faudra s'assurer que les variables et fonctions ont un nom qui ont un sens, et commenter le code lorsque le nom
   n'indique pas explicitement ce qu'il se passe
+
+## Avance du projet :
+
+- Commencement du projet 08/01/2023
+- Mise en place d'ESlint
+- Recupération de la data dans le fichier JSON
+- Affichage des photos d'ID des photographes
