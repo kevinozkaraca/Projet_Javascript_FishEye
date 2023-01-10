@@ -1,4 +1,4 @@
-"use strict";
+import photographerFactory from "../factories/photographerFactory.js";
 // Récupération des données du fichier JSON
 async function getPhotographers() {
   const response = await fetch("./data/photographers.json");

@@ -1,3 +1,4 @@
+import mediaFactory from "../factories/mediaFactory.js";
 // Récupération des informations du lien de la page :
 const params = new URLSearchParams(window.location.search);
 const photographerId = params.get("id");
@@ -17,7 +18,6 @@ function fetchPhotographer(photographerId) {
         if (dataPhotographers.id == dataMedias[i].photographerId) {
           // A integrer
           console.log(
-            number,
             dataMedias[i].id,
             dataMedias[i].photographerId,
             dataMedias[i].title,

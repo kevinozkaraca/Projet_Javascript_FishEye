@@ -13,6 +13,7 @@ function photographerFactory(data) {
     const locationElement = document.createElement("p");
     const priceElement = document.createElement("p");
     const taglineElement = document.createElement("p");
+    // Injection des éléments dans le DOM
     imgElement.setAttribute("src", picture);
     imgElement.alt = `Photo du photographe ${name}`;
     link.href = `./photographer.html?id=${id}`;
@@ -32,3 +33,4 @@ function photographerFactory(data) {
   }
   return { city, country, id, name, portrait, price, tagline, getUserCardDOM };
 }
+export default photographerFactory;
