@@ -9,20 +9,19 @@ async function getMedia() {
   const data = response.json();
   return data;
 }
-getMedia();
 
-async function displayData(media) {
+async function displayData(medias) {
   const photographersHeader = document.querySelector(".photograph-header");
-
-  const mediaModel = mediaFactory(media);
-  const userMediaDom = mediaModel.getMediaCardDOM();
-  for (let i = 0; i < media.length; i++) {
-    if (photographerId == media[i].photographerId) {
-      // Implémentation du code !
-      photographersHeader.appendChild(userMediaDom);
-      console.log(photographersHeader.appendChild(userMediaDom));
+  medias.forEach((media) => {
+    const mediaModel = mediaFactory(media);
+    const userMediaDom = mediaModel.getMediaCardDOM();
+    for (let i = 0; i < media.length; i++) {
+      if (photographerId == media[i].photographerId) {
+        photographersHeader.appendChild(userMediaDom);
+        console.log(userMediaDom);
+      }
     }
-  }
+  });
 }
 
 async function init() {

@@ -1,8 +1,9 @@
 function mediaFactory(data) {
   // Récupération des données du fichiers JSON dans des variable
   const { price, date, likes, title, photographerId, id } = data;
-  const imageUrl = `assets/media/${data.image}`;
-  const videoUrl = `assets/media/${data.video}`;
+  const imageUrl = `assets/${data.image}`;
+  const videoUrl = `assets/${data.video}`;
+
   function getMediaCardDOM() {
     // Création des éléments pour l'affichage des médias
     const article = document.createElement("article");
