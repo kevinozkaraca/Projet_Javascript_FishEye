@@ -1,6 +1,6 @@
 function mediaFactory(data) {
   // Récupération des données du fichiers JSON dans des variable
-  const { price, date, likes, title, photographerId, id } = data;
+  const { id, photographerId, title, likes, date, price } = data;
   const imageUrl = `assets/${data.image}`;
   const videoUrl = `assets/${data.video}`;
 
@@ -14,19 +14,17 @@ function mediaFactory(data) {
     const h2 = document.createElement("h2");
     const p = document.createElement("p");
     // Injection des éléments dans le DOM
-    imgElement.setAttribute("src", imageUrl);
     div1.className = "text_photo";
     div2.className = "likes_photo";
     h2.textContent = title;
     p.textContent = likes;
     article.appendChild(link);
-    link.appendChild(imgElement);
     article.appendChild(div1);
     div1.appendChild(div2);
     div1.appendChild(h2);
     div2.appendChild(p);
     return article;
   }
-  return { image: imageUrl, video: videoUrl, id, photographerId, price, date, getMediaCardDOM };
+  return { image: imageUrl, video: videoUrl, id, photographerId, title, likes, date, price, getMediaCardDOM };
 }
 export default mediaFactory;
