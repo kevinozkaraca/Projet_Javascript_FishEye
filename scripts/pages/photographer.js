@@ -15,10 +15,10 @@ async function displayData(medias) {
   medias.forEach((media) => {
     const mediaModel = mediaFactory(media);
     const userMediaDom = mediaModel.getMediaCardDOM();
-    for (let i = 0; i < media.length; i++) {
-      if (photographerId == medias[i].photographerId) {
+    console.log(medias.length);
+    for (let i = 0; i < medias.length; i++) {
+      if (+photographerId == medias[i].photographerId) {
         photographersHeader.appendChild(userMediaDom);
-        console.log("A corriger le IF ");
       }
     }
   });
