@@ -1,13 +1,43 @@
 import mediaFactory from "../factories/mediaFactory.js";
+import photographerFactory from "../factories/photographerFactory.js";
 // Récupération des informations du lien de la page :
 const params = new URLSearchParams(window.location.search);
 const photographerId = params.get("id");
 
+async function getMedia() {
+  const response = await fetch("../data/photographers.json");
+  const data = response.json();
+  return data;
+}
+getMedia();
+
+async function displayData(media) {
+  const photographersHeader = document.querySelector(".photograph-header");
+
+  const mediaModel = mediaFactory(media);
+  const userMediaDom = mediaModel.getMediaCardDOM();
+  for (let i = 0; i < media.length; i++) {
+    if (photographerId == media[i].photographerId) {
+      // Implémentation du code !
+      photographersHeader.appendChild(userMediaDom);
+      console.log(photographersHeader.appendChild(userMediaDom));
+    }
+  }
+}
+
+async function init() {
+  const { media } = await getMedia();
+  displayData(media);
+}
+init();
+
+/*
 // Séléction du photographe et affichage de son  :
 function fetchPhotographer(photographerId) {
   fetch("./data/photographers.json").then(function (response) {
     response.json().then(function (json) {
-      console.log(json.media[0]);
+      const mediaModel = mediaFactory(json.media);
+
       // Data du photographe
       const dataPhotographers = json.photographers.find((data) => data.id == photographerId);
       const { city, country, id, name, portrait, price, tagline } = dataPhotographers;
@@ -16,7 +46,9 @@ function fetchPhotographer(photographerId) {
       // Affichage des médias du photographe
       for (let i = 0; i < dataMedias.length; i++) {
         if (dataPhotographers.id == dataMedias[i].photographerId) {
-          // A integrer
+          // Implémentation du code !
+          console.log(mediaModel.getMediaCardDOM());
+          
           console.log(
             dataMedias[i].id,
             dataMedias[i].photographerId,
@@ -33,3 +65,4 @@ function fetchPhotographer(photographerId) {
 }
 
 fetchPhotographer(photographerId);
+*/
