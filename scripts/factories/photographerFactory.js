@@ -6,7 +6,7 @@ function photographerFactory(data) {
   function getUserCardDOM() {
     // Création des éléments pour l'affichage des photographes
     const div = document.createElement("div");
-    const link = document.createElement("a");
+    const link1 = document.createElement("a");
     const article = document.createElement("article");
     const imgElement = document.createElement("img");
     const h2 = document.createElement("h2");
@@ -16,16 +16,17 @@ function photographerFactory(data) {
     // Injection des éléments dans le DOM
     imgElement.setAttribute("src", picture);
     imgElement.alt = `Photo du photographe ${name}`;
-    link.href = `./photographer.html?id=${id}`;
-    link.ariaLabel = name;
+    link1.href = `./photographer.html?id=${id}`;
+    link1.ariaLabel = name;
     h2.textContent = name;
-    div.appendChild(locationElement);
-    div.appendChild(taglineElement);
-    div.appendChild(priceElement);
     article.appendChild(div);
-    article.appendChild(link);
-    link.appendChild(imgElement);
-    link.appendChild(h2);
+    article.setAttribute("class", "photographer_section");
+    article.appendChild(link1);
+    link1.appendChild(imgElement);
+    link1.appendChild(h2);
+    link1.appendChild(locationElement);
+    link1.appendChild(taglineElement);
+    link1.appendChild(priceElement);
     locationElement.textContent = `${city}, ${country}`;
     taglineElement.textContent = tagline;
     priceElement.textContent = `${price} €/jour`;
