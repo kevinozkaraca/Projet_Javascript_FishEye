@@ -17,7 +17,6 @@ async function displayData(medias) {
     if (+photographerId == medias[i].photographerId) {
       const mediaModel = mediaFactory(medias[i]);
       const userMediaDom = mediaModel.getMediaCardDOM();
-      console.log(medias[i]);
       photographersHeader.appendChild(userMediaDom);
     }
   }

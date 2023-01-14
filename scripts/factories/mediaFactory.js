@@ -11,12 +11,21 @@ function mediaFactory(data) {
     const div2 = document.createElement("div");
     const h2 = document.createElement("h2");
     const p = document.createElement("p");
+    const imgElement = document.createElement("img");
+    const videoElement = document.createElement("video");
     // Injection des éléments dans le DOM
     article.appendChild(link);
     article.appendChild(div1);
     div1.appendChild(div2);
     div1.appendChild(h2);
     div2.appendChild(p);
+    if (imageUrl == `assets/${undefined}`) {
+      div2.appendChild(videoElement);
+      videoElement.src = videoUrl;
+    } else {
+      div2.appendChild(imgElement);
+      imgElement.src = imageUrl;
+    }
     div1.className = "text_photo";
     div2.className = "likes_photo";
     h2.textContent = title;
