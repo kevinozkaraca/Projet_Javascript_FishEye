@@ -5,6 +5,7 @@ function mediaFactory(data) {
   const videoUrl = `assets/${data.video}`;
   function getMediaCardDOM() {
     // Création des éléments pour l'affichage des médias
+    const header = document.getElementsByClassName("photograph-header")[0];
     const article = document.createElement("article");
     const link = document.createElement("a");
     const div1 = document.createElement("div");
@@ -15,19 +16,21 @@ function mediaFactory(data) {
     const videoElement = document.createElement("video");
     // Injection des éléments dans le DOM
     article.appendChild(link);
-    article.appendChild(div1);
-    div1.appendChild(div2);
+    article.appendChild(div2);
+    div2.appendChild(div1);
     div1.appendChild(h2);
-    div2.appendChild(p);
+    div1.appendChild(p);
+
     if (imageUrl == `assets/${undefined}`) {
       div2.appendChild(videoElement);
+      videoElement.setAttribute("controls", "true");
       videoElement.src = videoUrl;
     } else {
       div2.appendChild(imgElement);
       imgElement.src = imageUrl;
     }
-    div1.className = "text_photo";
-    div2.className = "likes_photo";
+    div2.className = "all_container";
+    div1.className = "text_container";
     h2.textContent = title;
     p.textContent = likes;
     return article;

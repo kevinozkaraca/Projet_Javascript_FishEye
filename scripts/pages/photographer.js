@@ -1,5 +1,4 @@
 import mediaFactory from "../factories/mediaFactory.js";
-import photographerFactory from "../factories/photographerFactory.js";
 // Récupération des informations du lien de la page :
 const params = new URLSearchParams(window.location.search);
 const photographerId = params.get("id");
@@ -11,13 +10,14 @@ async function getMedia() {
 }
 // Récupération des élément du DOM et boucle
 async function displayData(medias) {
-  const photographersHeader = document.querySelector(".photograph-header");
+  const imagesContainer = document.querySelector(".images-container");
 
+  console.log(medias);
   for (let i = 0; i < medias.length; i++) {
     if (+photographerId == medias[i].photographerId) {
       const mediaModel = mediaFactory(medias[i]);
       const userMediaDom = mediaModel.getMediaCardDOM();
-      photographersHeader.appendChild(userMediaDom);
+      imagesContainer.appendChild(userMediaDom);
     }
   }
 }

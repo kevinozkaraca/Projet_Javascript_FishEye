@@ -1,15 +1,69 @@
-/*.photographer_section {
+/*
+----- CODER AJOUTE
+*/
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+h1 {
+  color: #901c1c;
+  margin-right: 100px;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 100px;
+}
+.like_photo {
+  display: none;
+}
+.images-container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  text-align: center;
 }
-article img {
-  border-radius: 50%;
-  background-position: center;
-  overflow: hidden;
-}*/
+article {
+  width: 30%;
+}
+.images-container img,
+.images-container video {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  object-fit: cover;
+}
+.all_container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.text_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.text_container p {
+  margin-right: 35px;
+}
+.text_container h2 {
+  margin-left: 35px;
+}
+
 /*
 ----- CSS MODAL
 */
