@@ -1,5 +1,5 @@
 /*
------ CODER AJOUTE
+----- CODE DES IMAGES
 */
 body {
   font-family: "DM Sans", sans-serif;
@@ -76,8 +76,15 @@ article {
   background-color: #fafafa;
   height: 300px;
   margin: 0 100px;
+  width: 100%;
+  display: flex;
 }
-
+.photograph-header img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
 .contact_button {
   font-size: 20px;
   font-weight: bold;
@@ -89,6 +96,7 @@ article {
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
 }
 
 .modal {
