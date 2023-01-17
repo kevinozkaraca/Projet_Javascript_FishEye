@@ -39,7 +39,7 @@ async function displayData(media, photographers) {
       h2.innerText = `${photographers[i].name}`;
       p1.innerText = `${photographers[i].city}, ${photographers[i].country}`;
       p2.innerText = `${photographers[i].tagline}`;
-      contactButton.appendChild(imgElement);
+      photographHeader.appendChild(imgElement);
       imgElement.src = `../assets/${photographers[i].name.replace(/\s+/g, "")}.jpg`;
     }
   }
