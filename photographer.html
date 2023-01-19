@@ -15,28 +15,35 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button">Contactez-moi</button>
       </div>
       <!--AJOUTE D'UN CONTAINER POUR LES IMAGES-->
       <div class="images-container"></div>
     </main>
     <div id="contact_modal">
       <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+        <header id="contact_modal_header">
+          <div>
+            <h2>Contactez-moi</h2>
+            <img src="assets/icons/close.svg" />
+          </div>
         </header>
-        <form>
+        <form method="get">
           <div>
             <label>Prénom</label>
-            <input />
+            <input id="firstname" />
+            <label>Nom</label>
+            <input id="lastname" />
+            <label>Email</label>
+            <input id="email" />
+            <label>Votre message</label>
+            <input id="message" />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" id="btn_envoyer">Envoyer</button>
         </form>
       </div>
     </div>
-    <script type="module" src="scripts/pages/photographer.js"></script>
-
-    <script type="module" src="scripts/utils/contactform.js"></script>
+    <script src="./scripts/utils/contactForm.js"></script>
+    <script type="module" src="./scripts/pages/photographer.js"></script>
   </body>
 </html>

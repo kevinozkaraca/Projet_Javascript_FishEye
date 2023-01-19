@@ -21,10 +21,10 @@ async function displayData(media, photographers) {
   }
   const photographHeader = document.querySelector(".photograph-header");
   const contactButton = document.querySelector(".contact_button");
+  const mainSection = document.querySelector("#main");
   for (let i = 0; i < photographers.length; i++) {
     const div4 = document.createElement("div");
     if (+photographerId == photographers[i].id) {
-      console.log(media);
       const h2 = document.createElement("h2");
       const p1 = document.createElement("p");
       const p2 = document.createElement("p");
@@ -32,7 +32,7 @@ async function displayData(media, photographers) {
       const div1 = document.createElement("div");
       const div2 = document.createElement("div");
       const div3 = document.createElement("div");
-      photographHeader.appendChild(div1);
+      photographHeader.insertBefore(div1, contactButton);
       div1.appendChild(h2);
       div1.appendChild(p1);
       div1.appendChild(p2);
@@ -40,7 +40,10 @@ async function displayData(media, photographers) {
       p1.innerText = `${photographers[i].city}, ${photographers[i].country}`;
       p2.innerText = `${photographers[i].tagline}`;
       photographHeader.appendChild(imgElement);
-      imgElement.src = `../assets/${photographers[i].name.replace(/\s+/g, "")}.jpg`;
+      imgElement.src = `../assets/${photographers[i].name.replace(/[\s-]+/g, "")}.jpg`;
+      imgElement.appendChild(div2);
+      div2.appendChild(div3);
+      div3.innerText = "ca mark";
     }
   }
 }
