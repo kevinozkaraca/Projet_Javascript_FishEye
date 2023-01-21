@@ -41,9 +41,11 @@ async function displayData(media, photographers) {
       p2.innerText = `${photographers[i].tagline}`;
       photographHeader.appendChild(imgElement);
       imgElement.src = `../assets/${photographers[i].name.replace(/[\s-]+/g, "")}.jpg`;
-      imgElement.appendChild(div2);
-      div2.appendChild(div3);
-      div3.innerText = "ca mark";
+      photographHeader.appendChild(div2);
+      div2.appendChild(p1);
+      p1.innerText = `${297081} ❤`;
+      div2.appendChild(p2);
+      p2.innerText = `${photographers[i].price} €/jour`;
     }
   }
 }

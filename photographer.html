@@ -13,13 +13,21 @@
         <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
       </a>
     </header>
+
     <main id="main">
       <div class="photograph-header">
         <button class="contact_button">Contactez-moi</button>
       </div>
-      <!--AJOUTE D'UN CONTAINER POUR LES IMAGES-->
-      <div class="images-container"></div>
     </main>
+    <div class="filter-container">
+      <p>Trier par</p>
+      <select name="filter" id="filter">
+        <option value="Popularity">Popularité</option>
+        <option value="Date">Date</option>
+        <option value="Title">Titre</option>
+      </select>
+    </div>
+    <div class="images-container"></div>
     <div id="contact_modal">
       <div class="modal">
         <header id="contact_modal_header">

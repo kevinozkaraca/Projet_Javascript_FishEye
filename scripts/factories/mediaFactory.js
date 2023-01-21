@@ -31,7 +31,7 @@ function mediaFactory(data) {
     div2.className = "all_container";
     div1.className = "text_container";
     h3.textContent = title;
-    p.textContent = likes;
+    p.textContent = `${likes} ❤`;
     return article;
   }
   return { image: imageUrl, video: videoUrl, id, photographerId, title, likes, date, price, getMediaCardDOM };

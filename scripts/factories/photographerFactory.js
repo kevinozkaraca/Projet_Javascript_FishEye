@@ -28,7 +28,7 @@ function photographerFactory(data) {
     link1.appendChild(taglineElement);
     link1.appendChild(priceElement);
     locationElement.textContent = `${city}, ${country}`;
-    taglineElement.textContent = tagline;
+    taglineElement.textContent = `${tagline}`;
     priceElement.textContent = `${price} €/jour`;
     return article;
   }
