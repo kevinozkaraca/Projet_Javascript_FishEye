@@ -19,37 +19,32 @@ async function displayData(media, photographers) {
       imagesContainer.appendChild(userMediaDom);
     }
   }
-  const photographHeader = document.querySelector(".photograph-header");
-  const contactButton = document.querySelector(".contact_button");
   const mainSection = document.querySelector("#main");
   for (let i = 0; i < photographers.length; i++) {
-    const div4 = document.createElement("div");
+    const div1 = document.createElement("div");
     if (+photographerId == photographers[i].id) {
-      const h2 = document.createElement("h2");
-      const p1 = document.createElement("p");
-      const p2 = document.createElement("p");
-      const imgElement = document.createElement("img");
-      const div1 = document.createElement("div");
-      const div2 = document.createElement("div");
-      const div3 = document.createElement("div");
-      photographHeader.insertBefore(div1, contactButton);
-      div1.appendChild(h2);
-      div1.appendChild(p1);
-      div1.appendChild(p2);
-      h2.innerText = `${photographers[i].name}`;
-      p1.innerText = `${photographers[i].city}, ${photographers[i].country}`;
-      p2.innerText = `${photographers[i].tagline}`;
-      photographHeader.appendChild(imgElement);
-      imgElement.src = `../assets/${photographers[i].name.replace(/[\s-]+/g, "")}.jpg`;
-      photographHeader.appendChild(div2);
-      div2.appendChild(p1);
-      p1.innerText = `${297081} ❤`;
-      div2.appendChild(p2);
-      p2.innerText = `${photographers[i].price} €/jour`;
+      const gabarit = `
+      <div class="photograph-header">
+        <div>
+          <h2>${photographers[i].name}</h2>
+          <p>${photographers[i].city}</p>
+          <p>${photographers[i].tagline} </p>
+          </div>
+        <button class="contact_button">Contactez-moi</button> <img src="../assets/${photographers[i].name.replace(
+          /[\s-]+/g,
+          ""
+        )}.jpg" />
+        <div id="likeAnd">
+          <p>${297081} ❤</p>
+          <p>${photographers[i].price} €/jour</p>
+        </div>
+      </div>
+      `;
+      mainSection.appendChild(div1);
+      div1.innerHTML = gabarit;
     }
   }
 }
-
 // Récupèration la data des medias
 async function init() {
   const { media, photographers } = await getMedia();
