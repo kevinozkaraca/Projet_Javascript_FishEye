@@ -5,7 +5,6 @@ function mediaFactory(data) {
   const videoUrl = `assets/${data.video}`;
   function getMediaCardDOM() {
     // Création des éléments pour l'affichage des médias
-
     const article = document.createElement("article");
     const link = document.createElement("a");
     const div1 = document.createElement("div");
@@ -28,6 +27,11 @@ function mediaFactory(data) {
       div2.appendChild(imgElement);
       imgElement.src = imageUrl;
     }
+    // affichage du carrouselle image
+    div2.addEventListener("click", (e) => {
+      console.log(e.target.src);
+    });
+
     div2.className = "all_container";
     div1.className = "text_container";
     h3.textContent = title;
