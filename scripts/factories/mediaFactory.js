@@ -24,7 +24,7 @@ function mediaFactory(data) {
         <p>${likes} ❤</p>
       </div>
       <a href="#">
-      <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}">
+        <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}">
       </a>
     </div>
     `;

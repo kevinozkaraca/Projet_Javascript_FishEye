@@ -19,6 +19,7 @@ async function displayData(media, photographers) {
       imagesContainer.appendChild(userMediaDom);
     }
   }
+  // Affichage des éléments en fonctions du photographe
   const mainSection = document.querySelector("#main");
   for (let i = 0; i < photographers.length; i++) {
     const div1 = document.createElement("div");
