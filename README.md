@@ -20,16 +20,96 @@
 
 ## Les Etapes :
 
-- Prendre en main les éléments, la maquette et la base de code
-- Importer les datas
-- Intégrer la page d'accueil
-- Gérer la navigation entre la page accueil et la page photographe
-- Afficher le contenu statique de la page photographe
-- Créer la modale de contact
-- Gérer les médias de la Lightbox
-- Afficher et gérer les likes
-- Créer le système de tri
-- Vérifier le code avec un linter
+- 1.  Prendre en main les éléments, la maquette et la base de code :
+
+  - ✅ une compréhension des maquettes
+  - ✅ une compréhension des livrables attendus
+  - ✅ une connaissance du fonctionnement / du découpage des pages HTML / JS et CSS.
+  - ✅ ⚠️ Attention à vous assurer que vous comprenez bien tout le code
+    présent. N'hésitez pas à le modifier pour vous l'approprier
+
+- 2.  Importer les datas :
+
+  - ✅ Votre application qui récupère les données provenant du fichier
+    JSON
+  - ✅ Vous aurez votre fichier JSON dans datas. Vous devrez également
+    mettre les images associées dans assets.
+  - ✅ Ajouter fetch dans la fonction getPhotographers pour récupérer
+    vos datas, et faire un console.log de ces datas
+  - ✅ Retourner les datas
+  - ✅ Modifier `scripts/factories/Photographer.js` pour récupérer les
+    données nécessaires (id, tagline, city, etc.)
+
+- 3.  Intégrer la page d'accueil :
+
+  - ✅ Pour ce qui est du JS, vous trouverez un exemple de base de factory
+    pattern qui a été fait pour photographerFactory dans
+    scripts/factories/photographer.js. Vous devrez étendre cette factory
+    function afin de générer tous les éléments nécessaires, et retourner
+    les éléments du DOM associés.
+  - ❌ Les éléments du DOM ainsi que le HTML et CSS devront être écrits
+    afin d'assurer l'accessibilité : vous devrez surtout être vigilant sur les
+    déclarations alt et aria-label.
+  - ✅ Le début d'intégration CSS qui a été fait utilise flexbox et CSS grid,
+    n'hésitez pas à jeter un œil à leur documentation.
+  - ✅ Pour le moment, pas la peine de vous embêter à créer les liens, vous
+    le ferez à l'étape suivante.
+
+- 4.  Gérer la navigation entre la page accueil et la page photographe :
+
+  - ✅ Votre page d'accueil finalisée
+  - ❌ Le rapport AChecker de votre page
+  - ✅ Le chargement des données correspondant à la page détaillée
+  - Attention à l'accessibilité de vos liens (aria-label, gérer le focus, etc.)
+  - Maintenant que vous avez finalisé votre page d'accueil, vous pouvez
+    réaliser un rapport d'accessibilité avec un validateur d'accessibilité ou
+    une checklist, et corriger votre code en fonction
+
+- 5.  Afficher le contenu statique de la page photographe :
+
+  - ✅ Vous devrez réutiliser la fonction photographerFactory que vous
+    aviez étendu à l'étape 3 pour afficher le contenu de votre page, ainsi
+    que votre fonction permettant d'utiliser fetch.
+  - ✅ Vous afficherez également les réalisations des photographes. Sur le
+    modèle de la factory photographerFactory, vous devrez également
+    créer une factory pour Media.
+  - ✅ N'oubliez pas le petit encart qui affiche le tarif journalier du ou de la
+    photographe affiché.
+  - ✅ Vous vous occuperez du nombre de likes, de la LightBox et du
+    ContactForm dans une étape ultérieure.
+  - ✅ ⚠️ Dans la factory Media, vous devrez gérer les différents cas où le
+    média est une image ou une vidéo.
+
+- 6.  Créer la modale de contact :
+
+  - Une modale qui s'affiche lorsque l'on clique sur "Contactez-moi".
+  - La base de la modale est déjà présente dans la codebase. Vous
+    devrez y ajouter la gestion du formulaire ainsi que le style manquant.
+  - Pas d’API complexe avec laquelle interagir ici pour envoyer le
+    contenu de votre formulaire. Un simple console.log des données
+    entrées par l'utilisateur suffira à montrer que vous maîtrisez votre
+    sujet.
+  - ⚠️ Attention : dans la codebase actuelle, rien n'a été fait pour gérer
+    l'accessibilité de votre modale. Vous devrez gérer le focus sur toute la
+    page, le role, l'aria-label, etc.
+
+- 7.  Gérer les médias de la Lightbox :
+
+  - La LightBox qui s'affiche lorsque vous cliquez sur une photographie,
+    et dans laquelle vous pouvez faire défiler les autres photographies. La
+    LightBox se ferme au clic sur le bouton de fermeture.
+  - Vous devrez gérer les images et les vidéos affichées.
+  - ⚠️ Attention à bien gérer l'ouverture de la Lightbox, le défilement et la
+    fermeture avec le clic souris, mais aussi avec le clavier. Pour cela, vous
+    devrez utiliser des EventListeners et bien déclencher les actions
+    correspondantes.
+  - Comme pour les autres étapes, n'oubliez pas de bien déclarer les
+    aria-label et le rôle de votre LightBox.
+
+- 8.  Afficher et gérer les likes
+  - Les photos et vidéos de la galerie pourront être likées.
+- 9.  Créer le système de tri
+- 10. Vérifier le code avec un linter
 
 ## Fonctionnalités à mettre en place :
 
