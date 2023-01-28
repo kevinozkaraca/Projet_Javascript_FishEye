@@ -20,7 +20,7 @@
 
 ## Les Etapes :
 
-- 1.  Prendre en main les éléments, la maquette et la base de code :
+- 1.  ### Prendre en main les éléments, la maquette et la base de code :
 
   - ✅ une compréhension des maquettes
   - ✅ une compréhension des livrables attendus
@@ -28,7 +28,7 @@
   - ✅ ⚠️ Attention à vous assurer que vous comprenez bien tout le code
     présent. N'hésitez pas à le modifier pour vous l'approprier
 
-- 2.  Importer les datas :
+- 2.  ### Importer les datas :
 
   - ✅ Votre application qui récupère les données provenant du fichier
     JSON
@@ -40,7 +40,7 @@
   - ✅ Modifier `scripts/factories/Photographer.js` pour récupérer les
     données nécessaires (id, tagline, city, etc.)
 
-- 3.  Intégrer la page d'accueil :
+- 3.  ### Intégrer la page d'accueil :
 
   - ✅ Pour ce qui est du JS, vous trouverez un exemple de base de factory
     pattern qui a été fait pour photographerFactory dans
@@ -55,7 +55,7 @@
   - ✅ Pour le moment, pas la peine de vous embêter à créer les liens, vous
     le ferez à l'étape suivante.
 
-- 4.  Gérer la navigation entre la page accueil et la page photographe :
+- 4. ### Gérer la navigation entre la page accueil et la page photographe :
 
   - ✅ Votre page d'accueil finalisée
   - ❌ Le rapport AChecker de votre page
@@ -65,7 +65,7 @@
     réaliser un rapport d'accessibilité avec un validateur d'accessibilité ou
     une checklist, et corriger votre code en fonction
 
-- 5.  Afficher le contenu statique de la page photographe :
+- 5. ### Afficher le contenu statique de la page photographe :
 
   - ✅ Vous devrez réutiliser la fonction photographerFactory que vous
     aviez étendu à l'étape 3 pour afficher le contenu de votre page, ainsi
@@ -80,7 +80,7 @@
   - ✅ ⚠️ Dans la factory Media, vous devrez gérer les différents cas où le
     média est une image ou une vidéo.
 
-- 6.  Créer la modale de contact :
+- 6. ### Créer la modale de contact :
 
   - Une modale qui s'affiche lorsque l'on clique sur "Contactez-moi".
   - La base de la modale est déjà présente dans la codebase. Vous
@@ -93,7 +93,7 @@
     l'accessibilité de votre modale. Vous devrez gérer le focus sur toute la
     page, le role, l'aria-label, etc.
 
-- 7.  Gérer les médias de la Lightbox :
+- 7. ### Gérer les médias de la Lightbox :
 
   - La LightBox qui s'affiche lorsque vous cliquez sur une photographie,
     et dans laquelle vous pouvez faire défiler les autres photographies. La
@@ -106,10 +106,10 @@
   - Comme pour les autres étapes, n'oubliez pas de bien déclarer les
     aria-label et le rôle de votre LightBox.
 
-- 8.  Afficher et gérer les likes
+- 8. ### Afficher et gérer les likes
   - Les photos et vidéos de la galerie pourront être likées.
-- 9.  Créer le système de tri
-- 10. Vérifier le code avec un linter
+- 9. ### Créer le système de tri
+- 10. ### Vérifier le code avec un linter
 
 ## Fonctionnalités à mettre en place :
 
