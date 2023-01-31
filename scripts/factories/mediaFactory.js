@@ -21,10 +21,10 @@ function mediaFactory(data) {
     <div class="all_container">
       <div class="text_container">
         <h3>${title}</h3>
-        <p>${likes} ❤</p>
+        <p alt="likes">${likes} ❤</p>
       </div>
       <a href="#">
-        <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}">
+        <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}" alt="${title}, closeup view">
       </a>
     </div>
     `;

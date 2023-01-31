@@ -1,15 +1,18 @@
+/*
 const filter = document.getElementById("filter");
-const allImages = document.getElementsByClassName("all_container");
-let imagelikes = allImages;
-console.log(allImages);
+
 filter.addEventListener("change", function () {
   if (filter.value == "Popularity") {
-    console.log(filter.value);
+    const allImages = document.getElementsByClassName("all_container");
+    console.log(allImages);
   }
   if (filter.value == "Title") {
-    console.log(filter.value);
+    const allImages = document.getElementsByClassName("all_container");
+    console.log(allImages);
   }
   if (filter.value == "Date") {
-    console.log(filter.value);
+    const allImages = document.getElementsByClassName("all_container");
+    console.log(allImages);
   }
 });
+*/

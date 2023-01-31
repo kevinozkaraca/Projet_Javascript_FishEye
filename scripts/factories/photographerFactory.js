@@ -10,7 +10,7 @@ function photographerFactory(data) {
     const gabarit = `
     <article>
     <div class="imageAndName">
-      <a href="./photographer.html?id=${id}">
+      <a href="./photographer.html?id=${id}" >
         <div class="imageContainer">
           <img src="${picture}" alt="Photo du photographe ${name}" />
         </div>
