@@ -11,19 +11,42 @@ async function getMedia() {
 
 // Récupération des élément du DOM et boucle pour les image
 async function displayData(media, photographers) {
-  const imagesContainer = document.querySelector(".images-container");
   for (let i = 0; i < media.length; i++) {
+    const imagesContainer = document.querySelector(".images-container");
+    const mediaModel = mediaFactory(media[i]);
+    const userMediaDom = mediaModel.getMediaCardDOM();
+    const filter = document.getElementById("filter");
+
     if (+photographerId == media[i].photographerId) {
-      const mediaModel = mediaFactory(media[i]);
-      const userMediaDom = mediaModel.getMediaCardDOM();
       imagesContainer.appendChild(userMediaDom);
+      filter.addEventListener("change", function () {
+        if (filter.value == "Popularity") {
+          const allImages = document.getElementsByClassName("all_container");
+          console.log(allImages);
+        }
+        if (filter.value == "Title") {
+          const allImages = document.getElementsByClassName("all_container");
+          console.log(allImages);
+        }
+        if (filter.value == "Date") {
+          const allImages = document.getElementsByClassName("all_container");
+          console.log(allImages);
+        }
+      });
     }
   }
+
   // Affichage des éléments en fonctions du photographe
   const mainSection = document.querySelector("#main");
   for (let i = 0; i < photographers.length; i++) {
     const div1 = document.createElement("div");
     if (+photographerId == photographers[i].id) {
+      const allLikes = document.querySelectorAll(".likes");
+      let allLikesCounter = 0;
+      for (let i = 0; i < allLikes.length; i++) {
+        allLikesCounter += +allLikes[i].innerHTML.slice(0, 2).toString();
+      }
+
       const gabarit = `
       <div class="photograph-header">
         <div>
@@ -35,7 +58,7 @@ async function displayData(media, photographers) {
             i
           ].name.replace(/[\s-]+/g, "")}.jpg" alt="${photographers[i].name}"/>
         <div id="likeAnd">
-          <p>${297081} ❤</p>
+          <p>${allLikesCounter} ❤</p>
           <p>${photographers[i].price} €/jour</p>
         </div>
       </div>
@@ -51,4 +74,5 @@ async function init() {
   const { media, photographers } = await getMedia();
   displayData(media, photographers);
 }
+
 init();
