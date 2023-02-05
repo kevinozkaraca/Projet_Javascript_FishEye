@@ -21,7 +21,7 @@ function mediaFactory(data) {
     <div class="all_container">
       <div class="text_container">
         <h3>${title}</h3>
-        <p alt="likes" class="likes">${likes} ❤</p>
+        <p alt="likes" class="likes">${likes} <button id="likeButton">❤</button></p>
       </div>
       <a href="#">
         <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}" alt="${title}, closeup view">
@@ -33,6 +33,11 @@ function mediaFactory(data) {
     // affichage du carrouselle image
     div1.addEventListener("click", (e) => {
       console.log(e.target.src);
+      /*
+      
+      IF BUTTON : likes ---> IF IMAGE : lightbox
+      
+      */
     });
 
     return article;

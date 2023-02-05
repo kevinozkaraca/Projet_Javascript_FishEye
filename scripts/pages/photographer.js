@@ -16,21 +16,22 @@ async function displayData(media, photographers) {
     const mediaModel = mediaFactory(media[i]);
     const userMediaDom = mediaModel.getMediaCardDOM();
     const filter = document.getElementById("filter");
-
     if (+photographerId == media[i].photographerId) {
       imagesContainer.appendChild(userMediaDom);
+      /*
+      
+      METTRE EN PLACE LE FILTRE
+      
+      */
       filter.addEventListener("change", function () {
         if (filter.value == "Popularity") {
-          const allImages = document.getElementsByClassName("all_container");
-          console.log(allImages);
+          media.sort((a, b) => b.likes - a.likes);
         }
         if (filter.value == "Title") {
-          const allImages = document.getElementsByClassName("all_container");
-          console.log(allImages);
+          media.sort((a, b) => a.title.localeCompare(b.title));
         }
         if (filter.value == "Date") {
-          const allImages = document.getElementsByClassName("all_container");
-          console.log(allImages);
+          media.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         }
       });
     }
@@ -41,12 +42,12 @@ async function displayData(media, photographers) {
   for (let i = 0; i < photographers.length; i++) {
     const div1 = document.createElement("div");
     if (+photographerId == photographers[i].id) {
+      // variables utiles pour la gestion des likes
       const allLikes = document.querySelectorAll(".likes");
       let allLikesCounter = 0;
       for (let i = 0; i < allLikes.length; i++) {
         allLikesCounter += +allLikes[i].innerHTML.slice(0, 2).toString();
       }
-
       const gabarit = `
       <div class="photograph-header">
         <div>

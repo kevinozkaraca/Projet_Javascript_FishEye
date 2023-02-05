@@ -50,18 +50,16 @@
   - ❌ Les éléments du DOM ainsi que le HTML et CSS devront être écrits
     afin d'assurer l'accessibilité : vous devrez surtout être vigilant sur les
     déclarations alt et aria-label.
-  - ✅ Le début d'intégration CSS qui a été fait utilise flexbox et CSS grid,
+  - ❌ Le début d'intégration CSS qui a été fait utilise flexbox et CSS grid,
     n'hésitez pas à jeter un œil à leur documentation.
-  - ✅ Pour le moment, pas la peine de vous embêter à créer les liens, vous
-    le ferez à l'étape suivante.
 
 - 4. ### Gérer la navigation entre la page accueil et la page photographe :
 
   - ✅ Votre page d'accueil finalisée
   - ❌ Le rapport AChecker de votre page
   - ✅ Le chargement des données correspondant à la page détaillée
-  - Attention à l'accessibilité de vos liens (aria-label, gérer le focus, etc.)
-  - Maintenant que vous avez finalisé votre page d'accueil, vous pouvez
+  - ❌ Attention à l'accessibilité de vos liens (aria-label, gérer le focus, etc.)
+  - ❌ Maintenant que vous avez finalisé votre page d'accueil, vous pouvez
     réaliser un rapport d'accessibilité avec un validateur d'accessibilité ou
     une checklist, et corriger votre code en fonction
 
@@ -75,46 +73,44 @@
     créer une factory pour Media.
   - ✅ N'oubliez pas le petit encart qui affiche le tarif journalier du ou de la
     photographe affiché.
-  - ✅ Vous vous occuperez du nombre de likes, de la LightBox et du
-    ContactForm dans une étape ultérieure.
   - ✅ ⚠️ Dans la factory Media, vous devrez gérer les différents cas où le
     média est une image ou une vidéo.
 
 - 6. ### Créer la modale de contact :
 
-  - Une modale qui s'affiche lorsque l'on clique sur "Contactez-moi".
-  - La base de la modale est déjà présente dans la codebase. Vous
+  - ✅ Une modale qui s'affiche lorsque l'on clique sur "Contactez-moi".
+  - ❌ La base de la modale est déjà présente dans la codebase. Vous
     devrez y ajouter la gestion du formulaire ainsi que le style manquant.
-  - Pas d’API complexe avec laquelle interagir ici pour envoyer le
+  - ❌ Pas d’API complexe avec laquelle interagir ici pour envoyer le
     contenu de votre formulaire. Un simple console.log des données
     entrées par l'utilisateur suffira à montrer que vous maîtrisez votre
     sujet.
-  - ⚠️ Attention : dans la codebase actuelle, rien n'a été fait pour gérer
+  - ❌ ⚠️ Attention : dans la codebase actuelle, rien n'a été fait pour gérer
     l'accessibilité de votre modale. Vous devrez gérer le focus sur toute la
     page, le role, l'aria-label, etc.
 
 - 7. ### Gérer les médias de la Lightbox :
 
-  - La LightBox qui s'affiche lorsque vous cliquez sur une photographie,
+  - ❌ La LightBox qui s'affiche lorsque vous cliquez sur une photographie,
     et dans laquelle vous pouvez faire défiler les autres photographies. La
     LightBox se ferme au clic sur le bouton de fermeture.
-  - Vous devrez gérer les images et les vidéos affichées.
-  - ⚠️ Attention à bien gérer l'ouverture de la Lightbox, le défilement et la
+  - ❌ Vous devrez gérer les images et les vidéos affichées.
+  - ❌ ⚠️ Attention à bien gérer l'ouverture de la Lightbox, le défilement et la
     fermeture avec le clic souris, mais aussi avec le clavier. Pour cela, vous
     devrez utiliser des EventListeners et bien déclencher les actions
     correspondantes.
-  - Comme pour les autres étapes, n'oubliez pas de bien déclarer les
+  - ❌ Comme pour les autres étapes, n'oubliez pas de bien déclarer les
     aria-label et le rôle de votre LightBox.
 
 - 8. ### Afficher et gérer les likes :
 
-  - Les photos et vidéos de la galerie pourront être likées.
-  - L'encart en bas de page affiche maintenant le nombre total de likes
-  - Vous pouvez gérer le nombre de likes total depuis votre factory
+  - ❌ Les photos et vidéos de la galerie pourront être likées.
+  - ❌ L'encart en bas de page affiche maintenant le nombre total de likes
+  - ❌ Vous pouvez gérer le nombre de likes total depuis votre factory
     photographerFactory.
-  - Ici, il n'y a pas besoin de sauvegarder vos likes : si vous rafraîchissez la
+  - ❌ Ici, il n'y a pas besoin de sauvegarder vos likes : si vous rafraîchissez la
     page, les likes ne doivent pas être sauvegardés.
-  - L’utilisateur ne doit pouvoir liker chaque photo qu’une seule fois,
+  - ❌ L’utilisateur ne doit pouvoir liker chaque photo qu’une seule fois,
     attention à votre implémentation.
 
 - 9. ### Créer le système de tri :
