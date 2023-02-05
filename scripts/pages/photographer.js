@@ -26,12 +26,15 @@ async function displayData(media, photographers) {
       filter.addEventListener("change", function () {
         if (filter.value == "Popularity") {
           media.sort((a, b) => b.likes - a.likes);
+          console.log(media.sort((a, b) => b.likes - a.likes));
         }
         if (filter.value == "Title") {
           media.sort((a, b) => a.title.localeCompare(b.title));
+          console.log(media.sort((a, b) => a.title.localeCompare(b.title)));
         }
         if (filter.value == "Date") {
           media.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+          console.log(media.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
         }
       });
     }
@@ -75,5 +78,4 @@ async function init() {
   const { media, photographers } = await getMedia();
   displayData(media, photographers);
 }
-
 init();

@@ -30,14 +30,24 @@ function mediaFactory(data) {
     `;
     article.appendChild(div1);
     div1.innerHTML = gabarit;
-    // affichage du carrouselle image
+    // affichage du carrouselle image et gerer les likes
+    const likeButton = document.getElementsByClassName("likeButton");
+    const likesNumber = document.getElementsByClassName("likes");
     div1.addEventListener("click", (e) => {
-      console.log(e.target.src);
+      console.log(e.target);
       /*
       
       IF BUTTON : likes ---> IF IMAGE : lightbox
       
       */
+      if (e.target.innerHTML == "❤") {
+        console.log("likes ++");
+      }
+      if (e.target.src) {
+        if (e.target.src.includes("jpg") || e.target.src.includes("mp4")) {
+          console.log("image or video");
+        }
+      }
     });
 
     return article;
