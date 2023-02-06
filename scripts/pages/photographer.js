@@ -61,8 +61,8 @@ async function displayData(media, photographers) {
           <button class="contact_button" onclick="displayModal()">Contactez-moi</button> <img src="../assets/${photographers[
             i
           ].name.replace(/[\s-]+/g, "")}.jpg" alt="${photographers[i].name}"/>
-        <div id="likeAnd">
-          <p>${allLikesCounter} ❤</p>
+        <div id="likeAndPrice">
+          <p id="allLikesCounter">${allLikesCounter} ❤</p>
           <p>${photographers[i].price} €/jour</p>
         </div>
       </div>
