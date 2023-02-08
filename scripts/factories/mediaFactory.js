@@ -34,7 +34,7 @@ function mediaFactory(data) {
     // affichage du carrouselle image et gerer les likes
     div1.addEventListener("click", (e) => {
       if (e.target.innerHTML == "❤") {
-        let likePlus = document.getElementById(`likes${e.target.id.slice(10, 12)}`);
+        let likePlus = document.getElementById(`likes${e.target.id.slice(10, 13)}`);
         likePlus.innerText = +likePlus.innerText + 1;
       }
       if (e.target.src) {

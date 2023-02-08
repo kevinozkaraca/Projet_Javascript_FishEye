@@ -18,23 +18,36 @@ async function displayData(media, photographers) {
     const filter = document.getElementById("filter");
     if (+photographerId == media[i].photographerId) {
       imagesContainer.appendChild(userMediaDom);
-      /*
-      
-      METTRE EN PLACE LE FILTRE
-      
-      */
       filter.addEventListener("change", function () {
         if (filter.value == "Popularity") {
-          media.sort((a, b) => b.likes - a.likes);
-          console.log(media.sort((a, b) => b.likes - a.likes));
+          const allArticle = document.querySelectorAll("article");
+          for (let i = 0; i < allArticle.length; i++) {
+            allArticle[i].remove();
+            media = media.sort((a, b) => b.likes - a.likes);
+            const mediaModel = mediaFactory(media[i]);
+            const userMediaDom = mediaModel.getMediaCardDOM();
+            imagesContainer.appendChild(userMediaDom);
+          }
         }
         if (filter.value == "Title") {
-          media.sort((a, b) => a.title.localeCompare(b.title));
-          console.log(media.sort((a, b) => a.title.localeCompare(b.title)));
+          const allArticle = document.querySelectorAll("article");
+          for (let i = 0; i < allArticle.length; i++) {
+            allArticle[i].remove();
+            media = media.sort((a, b) => a.title.localeCompare(b.title));
+            const mediaModel = mediaFactory(media[i]);
+            const userMediaDom = mediaModel.getMediaCardDOM();
+            imagesContainer.appendChild(userMediaDom);
+          }
         }
         if (filter.value == "Date") {
-          media.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-          console.log(media.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()));
+          const allArticle = document.querySelectorAll("article");
+          for (let i = 0; i < allArticle.length; i++) {
+            allArticle[i].remove();
+            media = media.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+            const mediaModel = mediaFactory(media[i]);
+            const userMediaDom = mediaModel.getMediaCardDOM();
+            imagesContainer.appendChild(userMediaDom);
+          }
         }
       });
     }
