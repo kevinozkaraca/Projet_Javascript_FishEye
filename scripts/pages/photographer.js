@@ -69,7 +69,7 @@ async function displayData(media, photographers) {
         <div>
           <h2>${photographers[i].name}</h2>
           <p>${photographers[i].city}</p>
-          <p>${photographers[i].tagline} </p>
+          <p>${photographers[i].tagline}</p>
           </div>
           <button class="contact_button" onclick="displayModal()">Contactez-moi</button> <img src="../assets/${photographers[
             i
@@ -77,7 +77,7 @@ async function displayData(media, photographers) {
         <div id="likeAndPrice">
           <p id="allLikesCounter">${allLikesCounter} </p>
           <p>❤</p>
-          <p>${photographers[i].price} €/jour</p>
+          <p>${photographers[i].price}€/jour</p>
         </div>
       </div>
       `;

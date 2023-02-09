@@ -1,4 +1,5 @@
 let counter = 0;
+
 function mediaFactory(data) {
   // Récupération des données du fichiers JSON dans des variable
   let { id, photographerId, title, likes, date, price } = data;
@@ -24,7 +25,7 @@ function mediaFactory(data) {
         <h3>${title}</h3>
         <p alt="likes" id="likes${counter}" class="likes">${likes} </p><p class="likeButton" id="likeButton${counter}">❤</p>
       </div>
-      <a href="#">
+      <a id="imageAndVideoContainer">
         <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}" alt="${title}, closeup view">
       </a>
     </div>
@@ -33,6 +34,7 @@ function mediaFactory(data) {
     div1.innerHTML = gabarit;
     // affichage du carrouselle image et gerer les likes
     let likeCounter = 1;
+
     div1.addEventListener("click", (e) => {
       if (e.target.innerHTML == "❤") {
         let likePlus = document.getElementById(`likes${e.target.id.slice(10, 13)}`);
@@ -41,9 +43,29 @@ function mediaFactory(data) {
         alllikePlus.innerText = +alllikePlus.innerText + likeCounter;
         likeCounter = 0;
       }
+      /*
+
+
+
+      // Affichage de la lightBox
+
+      */
+      function displayLightBox() {
+        let imageAndVideoContainer = document.querySelectorAll("#imageAndVideoContainer");
+        const imagesContainer = document.querySelector(".images-container");
+        let gabarit = `
+        <div id="lightBox">
+        
+        ${e.innerHTML}
+        
+        </div>
+        `;
+        imagesContainer.insertAdjacentHTML("afterend", gabarit);
+        console.log(e.target.innerHTML);
+      }
       if (e.target.src) {
         if (e.target.src.includes("jpg") || e.target.src.includes("mp4")) {
-          console.log("image or video");
+          displayLightBox();
         }
       }
     });
