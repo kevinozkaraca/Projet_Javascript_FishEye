@@ -32,10 +32,14 @@ function mediaFactory(data) {
     article.appendChild(div1);
     div1.innerHTML = gabarit;
     // affichage du carrouselle image et gerer les likes
+    let likeCounter = 1;
     div1.addEventListener("click", (e) => {
       if (e.target.innerHTML == "❤") {
         let likePlus = document.getElementById(`likes${e.target.id.slice(10, 13)}`);
-        likePlus.innerText = +likePlus.innerText + 1;
+        let alllikePlus = document.getElementById("allLikesCounter");
+        likePlus.innerText = +likePlus.innerText + likeCounter;
+        alllikePlus.innerText = +alllikePlus.innerText + likeCounter;
+        likeCounter = 0;
       }
       if (e.target.src) {
         if (e.target.src.includes("jpg") || e.target.src.includes("mp4")) {

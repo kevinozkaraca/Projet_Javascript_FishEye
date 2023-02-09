@@ -75,7 +75,8 @@ async function displayData(media, photographers) {
             i
           ].name.replace(/[\s-]+/g, "")}.jpg" alt="${photographers[i].name}"/>
         <div id="likeAndPrice">
-          <p id="allLikesCounter">${allLikesCounter} ❤</p>
+          <p id="allLikesCounter">${allLikesCounter} </p>
+          <p>❤</p>
           <p>${photographers[i].price} €/jour</p>
         </div>
       </div>

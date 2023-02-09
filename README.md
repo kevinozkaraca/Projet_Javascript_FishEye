@@ -104,31 +104,31 @@
 
 - 8. ### Afficher et gérer les likes :
 
-  - ❌ Les photos et vidéos de la galerie pourront être likées.
-  - ❌ L'encart en bas de page affiche maintenant le nombre total de likes
-  - ❌ Vous pouvez gérer le nombre de likes total depuis votre factory
+  - ✅ Les photos et vidéos de la galerie pourront être likées.
+  - ✅ L'encart en bas de page affiche maintenant le nombre total de likes
+  - ✅ Vous pouvez gérer le nombre de likes total depuis votre factory
     photographerFactory.
-  - ❌ Ici, il n'y a pas besoin de sauvegarder vos likes : si vous rafraîchissez la
+  - ✅ Ici, il n'y a pas besoin de sauvegarder vos likes : si vous rafraîchissez la
     page, les likes ne doivent pas être sauvegardés.
-  - ❌ L’utilisateur ne doit pouvoir liker chaque photo qu’une seule fois,
+  - ✅ L’utilisateur ne doit pouvoir liker chaque photo qu’une seule fois,
     attention à votre implémentation.
 
 - 9. ### Créer le système de tri :
 
-  - La page photographe finale intégrant la fonctionnalité de tri
+  - ✅ La page photographe finale intégrant la fonctionnalité de tri
   - Rapport d'accessibilité de la page photographe
-  - Vous pouvez utiliser la méthode sort pour faire votre tri.
-  - Une fois votre page photographe finalisée, vous pouvez également
+  - ✅ Vous pouvez utiliser la méthode sort pour faire votre tri.
+  - ❌ Une fois votre page photographe finalisée, vous pouvez également
     réaliser un rapport d'accessibilité avec un validateur d'accessibilité ou
     une checklist, et corriger votre code en fonction.
-  - ⚠️ Attention à bien gérer l'accessibilité en permettant de sélectionner
+  - ❌ ⚠️ Attention à bien gérer l'accessibilité en permettant de sélectionner
     les éléments au clavier dans le menu déroulant.
 
 - 10. ### Vérifier le code avec un linter :
 
   - La base de code terminée et vérifiée avec un linter de code
-  - Vous devrez mettre en place votre linter de code (ESLint, JSLint, etc.)
-  - Vous êtes autorisé à faire taire certains avertissements
+  - ✅ Vous devrez mettre en place votre linter de code (ESLint, JSLint, etc.)
+  - ✅ Vous êtes autorisé à faire taire certains avertissements
 
 ## Fonctionnalités à mettre en place :
 
