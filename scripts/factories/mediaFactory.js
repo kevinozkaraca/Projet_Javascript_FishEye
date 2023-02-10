@@ -36,6 +36,7 @@ function mediaFactory(data) {
     let likeCounter = 1;
 
     div1.addEventListener("click", (e) => {
+      // Ajout d'un like
       if (e.target.innerHTML == "❤") {
         let likePlus = document.getElementById(`likes${e.target.id.slice(10, 13)}`);
         let alllikePlus = document.getElementById("allLikesCounter");
@@ -43,29 +44,24 @@ function mediaFactory(data) {
         alllikePlus.innerText = +alllikePlus.innerText + likeCounter;
         likeCounter = 0;
       }
-      /*
-
-
-
-      // Affichage de la lightBox
-
-      */
-      function displayLightBox() {
-        let imageAndVideoContainer = document.querySelectorAll("#imageAndVideoContainer");
-        const imagesContainer = document.querySelector(".images-container");
-        let gabarit = `
-        <div id="lightBox">
-        
-        ${e.innerHTML}
-        
-        </div>
-        `;
-        imagesContainer.insertAdjacentHTML("afterend", gabarit);
-        console.log(e.target.innerHTML);
-      }
+      // Affichage de la lightbox
       if (e.target.src) {
         if (e.target.src.includes("jpg") || e.target.src.includes("mp4")) {
-          displayLightBox();
+          let imageAndVideoContainer = document.querySelectorAll("#imageAndVideoContainer");
+          const imagesContainer = document.querySelector(".images-container");
+          const div1 = document.createElement("div");
+          if (e.target.src.includes("mp4")) {
+            imageOrVideoBalise = "video controls=true";
+            imageOrVideoLink = data.video;
+          } else {
+            imageOrVideoBalise = "img";
+            imageOrVideoLink = data.image;
+          }
+          let gabarit = `
+            <${imageOrVideoBalise} src ="${e.target.src}">        
+            `;
+          imagesContainer.appendChild(div1);
+          div1.innerHTML = gabarit;
         }
       }
     });
