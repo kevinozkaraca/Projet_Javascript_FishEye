@@ -61,3 +61,6 @@ h1 {
 .photographer_section article a {
   text-decoration: none;
 }
+.cityAndOther :nth-child(2) {
+  font-weight: bold;
+}

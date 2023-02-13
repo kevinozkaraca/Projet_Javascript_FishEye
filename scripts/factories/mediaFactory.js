@@ -58,7 +58,14 @@ function mediaFactory(data) {
             imageOrVideoLink = data.image;
           }
           let gabarit = `
-            <${imageOrVideoBalise} src ="${e.target.src}">        
+          <div id="lightBox">
+            <img src="assets/icons/close.svg" />
+            <div id="arrowsAndImages">
+              <div id="arrowLeft">&lt</div>
+              <${imageOrVideoBalise} src ="${e.target.src}">
+              <div id="arrowRight">&gt </div>
+            </div>
+          </div>         
             `;
           imagesContainer.appendChild(div1);
           div1.innerHTML = gabarit;

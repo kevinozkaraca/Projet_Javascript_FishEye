@@ -1,5 +1,9 @@
 # Projet de formation
 
+<p align="center">
+    <a href= "https://kevinozkaraca.github.io/Projet_Javascript_FishEye/"> Voir le site !</a>
+</p>
+
 ## Instructions :
 
 - Notre objectif est de construire un prototype fonctionnel d'un nouveau site web que nous pourrons présenter à FishEye lors de notre prochaine réunion avec les clients.
@@ -94,7 +98,7 @@
   - ❌ La LightBox qui s'affiche lorsque vous cliquez sur une photographie,
     et dans laquelle vous pouvez faire défiler les autres photographies. La
     LightBox se ferme au clic sur le bouton de fermeture.
-  - ❌ Vous devrez gérer les images et les vidéos affichées.
+  - ✅ Vous devrez gérer les images et les vidéos affichées.
   - ❌ ⚠️ Attention à bien gérer l'ouverture de la Lightbox, le défilement et la
     fermeture avec le clic souris, mais aussi avec le clavier. Pour cela, vous
     devrez utiliser des EventListeners et bien déclencher les actions
