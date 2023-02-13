@@ -4,7 +4,7 @@ import mediaFactory from "../factories/mediaFactory.js";
 const params = new URLSearchParams(window.location.search);
 const photographerId = params.get("id");
 async function getMedia() {
-  const response = await fetch("../data/photographers.json");
+  const response = await fetch("./data/photographers.json");
   const data = response.json();
   return data;
 }
