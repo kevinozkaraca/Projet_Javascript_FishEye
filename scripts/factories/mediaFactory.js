@@ -1,5 +1,4 @@
 let counter = 0;
-
 function mediaFactory(data) {
   // Récupération des données du fichiers JSON dans des variable
   let { id, photographerId, title, likes, date, price } = data;
@@ -26,7 +25,7 @@ function mediaFactory(data) {
         <p alt="likes" id="likes${counter}" class="likes">${likes} </p><p class="likeButton" id="likeButton${counter}">❤</p>
       </div>
       <a id="imageAndVideoContainer">
-        <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}" alt="${title}, closeup view">
+        <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}" alt="${title}, closeup view" id="imageOnpage">
       </a>
     </div>
     `;
@@ -36,6 +35,7 @@ function mediaFactory(data) {
     let likeCounter = 1;
 
     div1.addEventListener("click", (e) => {
+      console.log(e);
       // Ajout d'un like
       if (e.target.innerHTML == "❤") {
         let likePlus = document.getElementById(`likes${e.target.id.slice(10, 13)}`);
@@ -47,7 +47,6 @@ function mediaFactory(data) {
       // Affichage de la lightbox
       if (e.target.src) {
         if (e.target.src.includes("jpg") || e.target.src.includes("mp4")) {
-          let imageAndVideoContainer = document.querySelectorAll("#imageAndVideoContainer");
           const imagesContainer = document.querySelector(".images-container");
           const div1 = document.createElement("div");
           if (e.target.src.includes("mp4")) {
@@ -59,16 +58,38 @@ function mediaFactory(data) {
           }
           let gabarit = `
           <div id="lightBox">
-            <img src="assets/icons/close.svg" />
+            <img src="assets/icons/close.svg" id="closeLightBox"/>
             <div id="arrowsAndImages">
               <div id="arrowLeft">&lt</div>
-              <${imageOrVideoBalise} src ="${e.target.src}">
+              <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox">
               <div id="arrowRight">&gt </div>
             </div>
           </div>         
             `;
           imagesContainer.appendChild(div1);
           div1.innerHTML = gabarit;
+          const lightBox = document.querySelector("#lightBox");
+          const arrowLeft = document.querySelector("#arrowLeft");
+          const arrowRight = document.querySelector("#arrowRight");
+          const closeLightBox = document.querySelector("#closeLightBox");
+          const imageOnpage = document.querySelectorAll("#imageOnpage");
+          const imageOnLightBox = document.querySelector("#imageOnLightBox");
+          lightBox.addEventListener("click", (e) => {
+            if (e.target == arrowLeft) {
+              /*
+                CODE A COMPLETER ICI !!!
+              */
+              console.log(imageOnpage);
+              console.log(imageOnLightBox);
+              imageOnLightBox.src = imageOnpage[2].src;
+            }
+            if (e.target == arrowRight) {
+              console.log("droite");
+            }
+            if (e.target == closeLightBox) {
+              console.log("fermeture");
+            }
+          });
         }
       }
     });
