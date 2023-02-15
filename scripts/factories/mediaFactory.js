@@ -74,8 +74,34 @@ function mediaFactory(data) {
           const closeLightBox = document.querySelector("#closeLightBox");
           const imageOnpage = document.querySelectorAll("#imageOnpage");
           const imageOnLightBox = document.querySelector("#imageOnLightBox");
+          let createImgElement = document.createElement("img");
+          let createVideoElement = document.createElement("video");
           const lengthOfImageOnPage = imageOnpage.length - 1;
           let counterOfImageOnPage = 0;
+
+          imageOnLightBox.addEventListener("error", (e) => {
+            console.log(e.target.src);
+            if (!e.target.src) {
+              console.log("dfkhdlk");
+            }
+          });
+
+          // if (imageOnLightBox.src.includes("mp4")) {
+          //   console.log("vidoe");
+          //   imageOnLightBox.remove();
+          //   arrowLeft.insertAdjacentElement("afterend", createVideoElement);
+          //   createVideoElement.setAttribute("src", e.target.src);
+          //   createVideoElement.setAttribute("controls", true);
+          //   createVideoElement.setAttribute("id", "imageOnLightBox");
+          // }
+          // if (imageOnLightBox.src.includes("jpg")) {
+          //   console.log("image");
+          //   imageOnLightBox.remove();
+          //   arrowLeft.insertAdjacentElement("afterend", createImgElement);
+          //   createImgElement.setAttribute("src", e.target.src);
+          //   createImgElement.setAttribute("controls", true);
+          //   createImgElement.setAttribute("id", "imageOnLightBox");
+          // }
 
           lightBox.addEventListener("click", (e) => {
             if (e.target == arrowLeft) {
