@@ -35,7 +35,6 @@ function mediaFactory(data) {
     let likeCounter = 1;
 
     div1.addEventListener("click", (e) => {
-      console.log(e);
       // Ajout d'un like
       if (e.target.innerHTML == "❤") {
         let likePlus = document.getElementById(`likes${e.target.id.slice(10, 13)}`);
@@ -68,23 +67,32 @@ function mediaFactory(data) {
             `;
           imagesContainer.appendChild(div1);
           div1.innerHTML = gabarit;
+
           const lightBox = document.querySelector("#lightBox");
           const arrowLeft = document.querySelector("#arrowLeft");
           const arrowRight = document.querySelector("#arrowRight");
           const closeLightBox = document.querySelector("#closeLightBox");
           const imageOnpage = document.querySelectorAll("#imageOnpage");
           const imageOnLightBox = document.querySelector("#imageOnLightBox");
+          const lengthOfImageOnPage = imageOnpage.length - 1;
+          let counterOfImageOnPage = 0;
+
           lightBox.addEventListener("click", (e) => {
             if (e.target == arrowLeft) {
-              /*
-                CODE A COMPLETER ICI !!!
-              */
-              console.log(imageOnpage);
-              console.log(imageOnLightBox);
-              imageOnLightBox.src = imageOnpage[2].src;
+              console.log(counterOfImageOnPage);
+              if (counterOfImageOnPage >= lengthOfImageOnPage) {
+                counterOfImageOnPage = 0;
+              }
+              counterOfImageOnPage++;
+              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
             }
             if (e.target == arrowRight) {
-              console.log("droite");
+              console.log(counterOfImageOnPage);
+              if (counterOfImageOnPage <= 0) {
+                counterOfImageOnPage = lengthOfImageOnPage;
+              }
+              counterOfImageOnPage--;
+              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
             }
             if (e.target == closeLightBox) {
               console.log("fermeture");
