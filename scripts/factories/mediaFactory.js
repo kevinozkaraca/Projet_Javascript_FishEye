@@ -86,24 +86,24 @@ function mediaFactory(data) {
             }
           });
 
-          // if (imageOnLightBox.src.includes("mp4")) {
-          //   console.log("vidoe");
-          //   imageOnLightBox.remove();
-          //   arrowLeft.insertAdjacentElement("afterend", createVideoElement);
-          //   createVideoElement.setAttribute("src", e.target.src);
-          //   createVideoElement.setAttribute("controls", true);
-          //   createVideoElement.setAttribute("id", "imageOnLightBox");
-          // }
-          // if (imageOnLightBox.src.includes("jpg")) {
-          //   console.log("image");
-          //   imageOnLightBox.remove();
-          //   arrowLeft.insertAdjacentElement("afterend", createImgElement);
-          //   createImgElement.setAttribute("src", e.target.src);
-          //   createImgElement.setAttribute("controls", true);
-          //   createImgElement.setAttribute("id", "imageOnLightBox");
-          // }
-
           lightBox.addEventListener("click", (e) => {
+            // gestion de l'erreur en cas de video ou image
+            if (imageOnLightBox.src.includes("mp4")) {
+              const imageOnLightBox = document.querySelector("#imageOnLightBox");
+              imageOnLightBox.remove();
+              arrowLeft.insertAdjacentElement("afterend", createVideoElement);
+              createVideoElement.setAttribute("src", imageOnpage[counterOfImageOnPage].src);
+              createVideoElement.setAttribute("controls", true);
+              createVideoElement.setAttribute("id", "imageOnLightBox");
+            }
+            if (imageOnLightBox.src.includes("jpg")) {
+              const imageOnLightBox = document.querySelector("#imageOnLightBox");
+              imageOnLightBox.remove();
+              arrowLeft.insertAdjacentElement("afterend", createImgElement);
+              createImgElement.setAttribute("src", imageOnpage[counterOfImageOnPage].src);
+              createImgElement.setAttribute("controls", true);
+              createImgElement.setAttribute("id", "imageOnLightBox");
+            }
             if (e.target == arrowLeft) {
               console.log(counterOfImageOnPage);
               if (counterOfImageOnPage >= lengthOfImageOnPage) {
