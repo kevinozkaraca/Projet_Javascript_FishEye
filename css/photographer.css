@@ -1,31 +1,74 @@
-/*
------ CODE DES IMAGES
-*/
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
 }
 
-header {
+.photograph-header {
+  background-color: #fafafa;
+  height: 250px;
+  width: 90%;
+  margin: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
 }
-
-h1 {
+.photographInfo {
+  width: 30%;
+  margin-left: 40px;
+  padding: 0;
+}
+.photographInfo h2 {
+  margin: 0;
+  padding-top: 30px;
+  font-size: 45px;
+  color: #d3573c;
+  font-weight: 100;
+}
+.photographInfo :nth-child(2) {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 30px;
   color: #901c1c;
-  margin-right: 100px;
+}
+.photographInfo :nth-child(3) {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 15px;
+  color: black;
+}
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 80px;
+  margin-left: 80px;
+}
+.photograph-header img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  margin-top: 25px;
+  margin-left: 680px;
 }
 
+/*
+----- HEADER
+*/
 .logo {
   height: 50px;
   margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.like_photo {
-  display: none;
-}
+
+/*
+----- CODE DES IMAGES
+*/
 .images-container {
   width: 100%;
   display: flex;
@@ -49,56 +92,52 @@ article {
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 .text_container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin-left: 80px;
-  margin-right: 80px;
+  width: 400px;
+  color: #901c1c;
 }
 .text_container p {
-  margin-right: 35px;
+  text-align: end;
+}
+.likes {
+  display: inline;
+}
+.likeButton {
+  width: 0;
 }
 .text_container h3 {
-  margin-left: 35px;
+  text-align: start;
 }
-
 /*
------ CSS MODAL
+----- COUNTER OF LIKES AND PRICE
+*/
+#likeAndPrice {
+  position: fixed;
+  top: 93%;
+  left: 80%;
+  background-color: #d3573c;
+  display: flex;
+  border-radius: 5px;
+  z-index: 50;
+}
+#likeAndPrice p {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 20px;
+  position: sticky;
+}
+#spaceDiv {
+  width: 25px;
+}
+/*
+----- MODAL
 */
 
 #contact_modal {
   display: none;
 }
-
-.photograph-header {
-  background-color: #fafafa;
-  height: 300px;
-  margin: 0 100px;
-  width: 100%;
-  display: flex;
-}
-.photograph-header img {
-  border-radius: 50%;
-  object-fit: cover;
-  width: 200px;
-  height: 200px;
-}
-.contact_button {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  border: none;
-  background-color: #901c1c;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-}
-
 .modal {
   border-radius: 5px;
   background-color: #db8876;

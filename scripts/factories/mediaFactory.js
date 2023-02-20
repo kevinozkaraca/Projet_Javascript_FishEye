@@ -79,13 +79,6 @@ function mediaFactory(data) {
           const lengthOfImageOnPage = imageOnpage.length - 1;
           let counterOfImageOnPage = 0;
 
-          imageOnLightBox.addEventListener("error", (e) => {
-            console.log(e.target.src);
-            if (!e.target.src) {
-              console.log("dfkhdlk");
-            }
-          });
-
           lightBox.addEventListener("click", (e) => {
             // gestion de l'erreur en cas de video ou image
             if (imageOnLightBox.src.includes("mp4")) {
@@ -105,7 +98,6 @@ function mediaFactory(data) {
               createImgElement.setAttribute("id", "imageOnLightBox");
             }
             if (e.target == arrowLeft) {
-              console.log(counterOfImageOnPage);
               if (counterOfImageOnPage >= lengthOfImageOnPage) {
                 counterOfImageOnPage = 0;
               }
@@ -113,7 +105,6 @@ function mediaFactory(data) {
               imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
             }
             if (e.target == arrowRight) {
-              console.log(counterOfImageOnPage);
               if (counterOfImageOnPage <= 0) {
                 counterOfImageOnPage = lengthOfImageOnPage;
               }
@@ -121,7 +112,7 @@ function mediaFactory(data) {
               imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
             }
             if (e.target == closeLightBox) {
-              console.log("fermeture");
+              lightBox.remove();
             }
           });
         }

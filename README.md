@@ -95,11 +95,11 @@
 
 - 7. ### Gérer les médias de la Lightbox :
 
-  - ❌ La LightBox qui s'affiche lorsque vous cliquez sur une photographie,
+  - ✅ La LightBox qui s'affiche lorsque vous cliquez sur une photographie,
     et dans laquelle vous pouvez faire défiler les autres photographies. La
     LightBox se ferme au clic sur le bouton de fermeture.
   - ✅ Vous devrez gérer les images et les vidéos affichées.
-  - ❌ ⚠️ Attention à bien gérer l'ouverture de la Lightbox, le défilement et la
+  - ✅ ⚠️ Attention à bien gérer l'ouverture de la Lightbox, le défilement et la
     fermeture avec le clic souris, mais aussi avec le clavier. Pour cela, vous
     devrez utiliser des EventListeners et bien déclencher les actions
     correspondantes.
