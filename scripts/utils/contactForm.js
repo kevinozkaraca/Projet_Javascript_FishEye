@@ -1,21 +1,23 @@
 const modal_button = document.querySelector(".contact_button");
 const contact_modal = document.getElementById("contact_modal");
-const contact_button = document.getElementById("contact_button");
+const contact_button = document.querySelector(".contact_button");
 const firstname = document.getElementById("firstname");
 const lastname = document.getElementById("lastname");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
+const closeModalCross = document.querySelector("#closeModalCross");
 
-modal_button.addEventListener("click", displayModal);
-contact_modal.addEventListener("click", closeModal);
-
-function displayModal() {
+contact_button.addEventListener("click", function (e) {
+  e.preventDefault();
   contact_modal.style.display = "block";
-}
+  console.log("objesfdsfsdfct");
+});
 
-function closeModal() {
+closeModalCross.addEventListener("click", function (e) {
+  e.preventDefault();
   contact_modal.style.display = "none";
-}
+  console.log("bug");
+});
 
 let regexFirstName =
   /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;

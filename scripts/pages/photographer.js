@@ -71,9 +71,10 @@ async function displayData(media, photographers) {
           <p>${photographers[i].city}, ${photographers[i].country}</p>
           <p>${photographers[i].tagline}</p>
           </div>
-          <button class="contact_button" onclick="displayModal()">Contactez-moi</button> <img src="./assets/${photographers[
-            i
-          ].name.replace(/[\s-]+/g, "")}.jpg" alt="${photographers[i].name}"/>
+          <button class="contact_button">Contactez-moi</button> <img src="./assets/${photographers[i].name.replace(
+            /[\s-]+/g,
+            ""
+          )}.jpg" alt="${photographers[i].name}"/>
         <div id="likeAndPrice">
           <p id="allLikesCounter">${allLikesCounter} </p>
           <p>❤</p>
