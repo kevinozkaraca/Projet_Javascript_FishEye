@@ -81,8 +81,25 @@ function mediaFactory(data) {
 
           lightBox.addEventListener("click", (e) => {
             e.preventDefault();
-            imageOnLightBox.remove();
+
             // gestion de l'erreur en cas de video ou image
+
+            if (e.target == arrowLeft) {
+              if (counterOfImageOnPage >= lengthOfImageOnPage) {
+                counterOfImageOnPage = 0;
+              }
+              counterOfImageOnPage++;
+
+              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
+            }
+            if (e.target == arrowRight) {
+              if (counterOfImageOnPage <= 0) {
+                counterOfImageOnPage = lengthOfImageOnPage;
+              }
+              counterOfImageOnPage--;
+              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
+            }
+
             if (imageOnLightBox.src.includes("mp4")) {
               const imageOnLightBox = document.querySelector("#imageOnLightBox");
               imageOnLightBox.remove();
@@ -98,20 +115,6 @@ function mediaFactory(data) {
               createImgElement.setAttribute("src", imageOnpage[counterOfImageOnPage].src);
               createImgElement.setAttribute("controls", true);
               createImgElement.setAttribute("id", "imageOnLightBox");
-            }
-            if (e.target == arrowLeft) {
-              if (counterOfImageOnPage >= lengthOfImageOnPage) {
-                counterOfImageOnPage = 0;
-              }
-              counterOfImageOnPage++;
-              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
-            }
-            if (e.target == arrowRight) {
-              if (counterOfImageOnPage <= 0) {
-                counterOfImageOnPage = lengthOfImageOnPage;
-              }
-              counterOfImageOnPage--;
-              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
             }
             if (e.target == closeLightBox) {
               lightBox.remove();
