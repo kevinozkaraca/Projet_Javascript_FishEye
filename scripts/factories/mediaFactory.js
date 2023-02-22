@@ -1,4 +1,5 @@
 let counter = 0;
+
 function mediaFactory(data) {
   // Récupération des données du fichiers JSON dans des variable
   let { id, photographerId, title, likes, date, price } = data;
@@ -67,7 +68,6 @@ function mediaFactory(data) {
             `;
           imagesContainer.appendChild(div1);
           div1.innerHTML = gabarit;
-
           const lightBox = document.querySelector("#lightBox");
           const arrowLeft = document.querySelector("#arrowLeft");
           const arrowRight = document.querySelector("#arrowRight");
@@ -80,6 +80,8 @@ function mediaFactory(data) {
           let counterOfImageOnPage = 0;
 
           lightBox.addEventListener("click", (e) => {
+            e.preventDefault();
+            imageOnLightBox.remove();
             // gestion de l'erreur en cas de video ou image
             if (imageOnLightBox.src.includes("mp4")) {
               const imageOnLightBox = document.querySelector("#imageOnLightBox");
@@ -124,4 +126,5 @@ function mediaFactory(data) {
   counter++;
   return { image: imageUrl, video: videoUrl, id, photographerId, title, likes, date, price, getMediaCardDOM };
 }
+
 export default mediaFactory;

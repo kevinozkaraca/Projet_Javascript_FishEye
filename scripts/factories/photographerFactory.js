@@ -25,8 +25,11 @@ function photographerFactory(data) {
   </article>`;
     article.appendChild(div1);
     div1.innerHTML = gabarit;
+
     return article;
   }
+
   return { city, country, id, name, portrait, price, tagline, getUserCardDOM };
 }
+
 export default photographerFactory;
