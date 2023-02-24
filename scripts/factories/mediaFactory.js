@@ -57,12 +57,12 @@ function mediaFactory(data) {
             imageOrVideoLink = data.image;
           }
           let gabarit = `
-          <div id="lightBox">
-            <img src="assets/icons/close.svg" id="closeLightBox"/>
+          <div id="lightBox" arial-label="image closeup view">
+            <img src="assets/icons/close.svg" id="closeLightBox" alt="Close dialog">
             <div id="arrowsAndImages">
-              <div id="arrowLeft">&lt</div>
+              <div id="arrowLeft" alt="Previous image">&lt</div>
               <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox">
-              <div id="arrowRight">&gt </div>
+              <div id="arrowRight" alt="Next image">&gt </div>
             </div>
           </div>         
             `;
@@ -127,6 +127,7 @@ function mediaFactory(data) {
     return article;
   }
   counter++;
+
   return { image: imageUrl, video: videoUrl, id, photographerId, title, likes, date, price, getMediaCardDOM };
 }
 

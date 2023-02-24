@@ -1,5 +1,5 @@
 import mediaFactory from "../factories/mediaFactory.js";
-
+import formDisplay from "../utils/contactForm.js";
 // Récupération des informations du lien de la page :
 const params = new URLSearchParams(window.location.search);
 const photographerId = params.get("id");
@@ -71,12 +71,11 @@ async function displayData(media, photographers) {
           <p>${photographers[i].city}, ${photographers[i].country}</p>
           <p>${photographers[i].tagline}</p>
           </div>
-          <button class="contact_me_button">Contactez-moi</button> <img src="./assets/${photographers[i].name.replace(
-            /[\s-]+/g,
-            ""
-          )}.jpg" alt="${photographers[i].name}"/>
+          <button class="contact_me_button" alt="Contact me">Contactez-moi</button> <img src="./assets/${photographers[
+            i
+          ].name.replace(/[\s-]+/g, "")}.jpg" alt="${photographers[i].name}"/>
         <div id="likeAndPrice">
-          <p id="allLikesCounter">${allLikesCounter} </p>
+          <p id="allLikesCounter" arial-label="likes">${allLikesCounter} </p>
           <p>❤</p>
           <p id="spaceDiv">
           <p>${photographers[i].price}€/jour</p>
@@ -85,6 +84,8 @@ async function displayData(media, photographers) {
       `;
       mainSection.appendChild(div1);
       div1.innerHTML = gabarit;
+      // Afficher le formulaire
+      formDisplay(photographers[i]);
     }
   }
 }
