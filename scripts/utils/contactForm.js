@@ -1,11 +1,5 @@
 async function formDisplay(e) {
-  // Affichage du formulaire
-  const firstname = document.getElementById("firstname");
-  const lastname = document.getElementById("lastname");
-  const email = document.getElementById("email");
-  const message = document.getElementById("message");
   const imagesContainer = document.querySelector(".images-container");
-
   const gabarit2 = `
        <div id="contact_modal">
          <div class="modal">
@@ -30,7 +24,7 @@ async function formDisplay(e) {
            </form>
          </div>
        </div>
-                 `;
+  `;
   const div2 = document.createElement("div");
   imagesContainer.insertAdjacentElement("afterend", div2);
   div2.innerHTML = gabarit2;
@@ -46,6 +40,10 @@ async function formDisplay(e) {
   const contact_button = document.querySelector(".contact_button");
   const contact_modal = document.querySelector("#contact_modal");
   contact_button.addEventListener("click", function (e) {
+    const firstname = document.getElementById("firstname");
+    const lastname = document.getElementById("lastname");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
     e.preventDefault();
     console.log(`
    Voici les valeurs du formulaire :

@@ -1,5 +1,5 @@
 import photographerFactory from "../factories/photographerFactory.js";
-
+import browsItems from "../utils/browseItems.js";
 // Récupération des données du fichier JSON
 async function getPhotographers() {
   const response = await fetch("./data/photographers.json");
@@ -19,5 +19,6 @@ async function displayData(photographers) {
 async function init() {
   const { photographers } = await getPhotographers();
   displayData(photographers);
+  browsItems();
 }
 init();

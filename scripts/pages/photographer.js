@@ -1,5 +1,6 @@
 import mediaFactory from "../factories/mediaFactory.js";
 import formDisplay from "../utils/contactForm.js";
+import browsItems from "../utils/browseItems.js";
 // Récupération des informations du lien de la page :
 const params = new URLSearchParams(window.location.search);
 const photographerId = params.get("id");
@@ -94,5 +95,6 @@ async function displayData(media, photographers) {
 async function init() {
   const { media, photographers } = await getMedia();
   displayData(media, photographers);
+  browsItems();
 }
 init();
