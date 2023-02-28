@@ -1,42 +1,70 @@
 // fonction pour parcourir les éléments du site
-
 function browsItems() {
-  let elementCounter = 0;
-  let allImagesOnPage = document.getElementsByClassName("photographerIMG");
-  let allLinkOnpage = document.getElementsByClassName("allIMGLink");
-  console.log(allImagesOnPage);
-  console.log(allLinkOnpage);
   const adressWeb = window.location.href;
 
+  // Fonctionnalités pour la page index :
   if (adressWeb.includes("index")) {
+    let elementCounter = 0;
+    let allImagesOnPage = [...document.getElementsByClassName("imageContainer")];
+    let allLinkOnPage = document.getElementsByClassName("allIMGLink");
+    let selectedLink;
     document.addEventListener("keydown", (e) => {
+      // fonctions de la fleche gauche
       if (e.code == "ArrowLeft") {
+        allImagesOnPage.forEach((element) => {
+          element.classList.remove("imageContainerSelected");
+          element.classList.add("imageContainer");
+        });
+
         if (elementCounter == 6) {
           elementCounter = 0;
         }
         if (elementCounter == -1) {
           elementCounter = 5;
+        }
+        allImagesOnPage.forEach((element) => {
+          element.classList.remove("imageContainerSelected");
+          element.classList.add("imageContainer");
+        });
+        allImagesOnPage[elementCounter].classList.add("imageContainerSelected");
+        selectedLink = allLinkOnPage[elementCounter];
+        elementCounter--;
+
+        return selectedLink;
+      }
+
+      // fonctions de la fleche droite
+      if (e.code == "ArrowRight") {
+        elementCounter--;
+        allImagesOnPage.forEach((element) => {
+          element.classList.remove("imageContainerSelected");
+          element.classList.add("imageContainer");
+        });
+        if (elementCounter == 6) {
+          if (elementCounter == 6) {
+            elementCounter = 0;
+          }
+          if (elementCounter == -1) {
+            elementCounter = 5;
+          }
+          allImagesOnPage.forEach((element) => {
+            element.classList.remove("imageContainerSelected");
+            element.classList.add("imageContainer");
+          });
+          allImagesOnPage[elementCounter].classList.add("imageContainerSelected");
+          selectedLink = allLinkOnPage[elementCounter];
         }
 
-        allImagesOnPage[elementCounter].style.transform = "scale(1.5)";
-        elementCounter--;
+        return selectedLink;
       }
-      if (e.code == "ArrowRight") {
-        if (elementCounter == 6) {
-          elementCounter = 0;
-        }
-        if (elementCounter == -1) {
-          elementCounter = 5;
-        }
-        console.log(allImagesOnPage[elementCounter]);
-        elementCounter++;
-      }
-      if (e.code == "Escape") {
-        console.log("Oh yeah !!!");
+      // fonctions de la touche entrer
+      if (e.code == "Enter") {
+        selectedLink.click();
       }
     });
   }
 
+  // Fonctionnalités pour la page photographer :
   if (adressWeb.includes("photographer")) {
     document.addEventListener("keydown", (e) => {
       let elementCounter = undefined;
