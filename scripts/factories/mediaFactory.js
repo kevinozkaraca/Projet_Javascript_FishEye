@@ -19,7 +19,7 @@ function mediaFactory(data) {
       imageOrVideoLink = data.image;
     }
     // Injection des éléments dans le DOM
-    const gabarit = `
+    const template = `
     <div class="all_container">
       <div class="text_container">
         <h3>${title}</h3>
@@ -31,7 +31,7 @@ function mediaFactory(data) {
     </div>
     `;
     article.appendChild(div1);
-    div1.innerHTML = gabarit;
+    div1.innerHTML = template;
     // affichage du carrouselle image et gerer les likes
     let likeCounter = 1;
 
@@ -56,7 +56,7 @@ function mediaFactory(data) {
             imageOrVideoBalise = "img";
             imageOrVideoLink = data.image;
           }
-          let gabarit = `
+          let template = `
           <div id="lightBox" arial-label="image closeup view">
             <img src="assets/icons/close.svg" id="closeLightBox" alt="Close dialog">
             <div id="arrowsAndImages">
@@ -67,7 +67,7 @@ function mediaFactory(data) {
           </div>         
             `;
           imagesContainer.appendChild(div1);
-          div1.innerHTML = gabarit;
+          div1.innerHTML = template;
           const lightBox = document.querySelector("#lightBox");
           const arrowLeft = document.querySelector("#arrowLeft");
           const arrowRight = document.querySelector("#arrowRight");

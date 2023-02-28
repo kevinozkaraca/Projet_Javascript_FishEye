@@ -1,6 +1,6 @@
 async function formDisplay(e) {
   const imagesContainer = document.querySelector(".images-container");
-  const gabarit2 = `
+  const template2 = `
        <div id="contact_modal">
          <div class="modal">
            <header id="contact_modal_header">
@@ -27,7 +27,7 @@ async function formDisplay(e) {
   `;
   const div2 = document.createElement("div");
   imagesContainer.insertAdjacentElement("afterend", div2);
-  div2.innerHTML = gabarit2;
+  div2.innerHTML = template2;
 
   const contact_me_button = document.querySelector(".contact_me_button");
   contact_me_button.addEventListener("click", function () {

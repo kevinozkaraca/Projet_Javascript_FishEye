@@ -7,12 +7,12 @@ function photographerFactory(data) {
     // Création des éléments pour l'affichage des photographes
     const article = document.createElement("article");
     const div1 = document.createElement("div");
-    const gabarit = `
+    const template = `
     <article>
     <div class="imageAndName">
-      <a href="./photographer.html?id=${id}" >
+      <a href="./photographer.html?id=${id}" class="allIMGLink">
         <div class="imageContainer">
-          <img src="${picture}" alt="Photo du photographe ${name}" />
+          <img src="${picture}" alt="Photo du photographe ${name}" class="photographerIMG"/>
         </div>
         <h2>${name}</h2>
       </a>
@@ -24,7 +24,7 @@ function photographerFactory(data) {
     </div>
   </article>`;
     article.appendChild(div1);
-    div1.innerHTML = gabarit;
+    div1.innerHTML = template;
 
     return article;
   }

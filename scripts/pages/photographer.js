@@ -65,7 +65,7 @@ async function displayData(media, photographers) {
       for (let i = 0; i < allLikes.length; i++) {
         allLikesCounter += +allLikes[i].innerHTML.slice(0, 2).toString();
       }
-      const gabarit = `
+      const template = `
       <div class="photograph-header">
         <div class="photographInfo">
           <h2>${photographers[i].name}</h2>
@@ -84,7 +84,7 @@ async function displayData(media, photographers) {
       </div>
       `;
       mainSection.appendChild(div1);
-      div1.innerHTML = gabarit;
+      div1.innerHTML = template;
       // Afficher le formulaire
       formDisplay(photographers[i]);
     }
@@ -95,6 +95,5 @@ async function displayData(media, photographers) {
 async function init() {
   const { media, photographers } = await getMedia();
   displayData(media, photographers);
-  browsItems();
 }
 init();
