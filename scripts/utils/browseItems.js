@@ -16,44 +16,44 @@ function browsItems() {
           element.classList.add("imageContainer");
         });
 
+        allImagesOnPage.forEach((element) => {
+          element.classList.remove("imageContainerSelected");
+          element.classList.add("imageContainer");
+        });
+
+        elementCounter--;
         if (elementCounter == 6) {
           elementCounter = 0;
         }
         if (elementCounter == -1) {
           elementCounter = 5;
         }
-        allImagesOnPage.forEach((element) => {
-          element.classList.remove("imageContainerSelected");
-          element.classList.add("imageContainer");
-        });
         allImagesOnPage[elementCounter].classList.add("imageContainerSelected");
         selectedLink = allLinkOnPage[elementCounter];
-        elementCounter--;
 
         return selectedLink;
       }
 
       // fonctions de la fleche droite
       if (e.code == "ArrowRight") {
-        elementCounter--;
         allImagesOnPage.forEach((element) => {
           element.classList.remove("imageContainerSelected");
           element.classList.add("imageContainer");
         });
+
+        allImagesOnPage.forEach((element) => {
+          element.classList.remove("imageContainerSelected");
+          element.classList.add("imageContainer");
+        });
+        elementCounter++;
         if (elementCounter == 6) {
-          if (elementCounter == 6) {
-            elementCounter = 0;
-          }
-          if (elementCounter == -1) {
-            elementCounter = 5;
-          }
-          allImagesOnPage.forEach((element) => {
-            element.classList.remove("imageContainerSelected");
-            element.classList.add("imageContainer");
-          });
-          allImagesOnPage[elementCounter].classList.add("imageContainerSelected");
-          selectedLink = allLinkOnPage[elementCounter];
+          elementCounter = 0;
         }
+        if (elementCounter == -1) {
+          elementCounter = 5;
+        }
+        allImagesOnPage[elementCounter].classList.add("imageContainerSelected");
+        selectedLink = allLinkOnPage[elementCounter];
 
         return selectedLink;
       }
