@@ -66,19 +66,30 @@ function browsItems() {
 
   // Fonctionnalités pour la page photographer :
   if (adressWeb.includes("photographer")) {
-    document.addEventListener("keydown", (e) => {
-      let elementCounter = undefined;
-
-      if (e.code == "ArrowLeft") {
-        console.log("Oh yeah !!!");
-      }
-      if (e.code == "ArrowRight") {
-        console.log("Oh yeah !!!");
-      }
-      if (e.code == "Escape") {
-        console.log("Oh yeah !!!");
-      }
-    });
+    const lightBox = document.querySelector("#lightBox");
+    // Si la lighBox est absente
+    if (lightBox == null) {
+      const logo = document.querySelector(".logo");
+      const contactMeButton = document.querySelector("#contact_me_button");
+      const filterPopularity = document.querySelector("#filter").value;
+      console.log(filterPopularity);
+    }
+    // Si la lighBox est présente
+    if (lightBox) {
+      document.addEventListener("keydown", (e) => {
+        const arrowLeft = document.getElementById("arrowLeft");
+        const arrowRight = document.getElementById("arrowRight");
+        if (e.code == "ArrowLeft") {
+          arrowLeft.click();
+        }
+        if (e.code == "ArrowRight") {
+          arrowRight.click();
+        }
+        if (e.code == "Escape") {
+          lightBox.remove();
+        }
+      });
+    }
   }
 }
 export default browsItems;

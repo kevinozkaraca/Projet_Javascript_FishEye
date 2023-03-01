@@ -39,6 +39,7 @@ async function formDisplay(e) {
   });
   const contact_button = document.querySelector(".contact_button");
   const contact_modal = document.querySelector("#contact_modal");
+
   contact_button.addEventListener("click", function (e) {
     const firstname = document.getElementById("firstname");
     const lastname = document.getElementById("lastname");

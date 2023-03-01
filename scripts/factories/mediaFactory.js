@@ -1,3 +1,5 @@
+import browsItems from "../utils/browseItems.js";
+
 let counter = 0;
 
 function mediaFactory(data) {
@@ -120,6 +122,7 @@ function mediaFactory(data) {
               lightBox.remove();
             }
           });
+          browsItems();
         }
       }
     });
