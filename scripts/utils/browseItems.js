@@ -20,7 +20,6 @@ function browsItems() {
           element.classList.remove("imageContainerSelected");
           element.classList.add("imageContainer");
         });
-
         elementCounter--;
         if (elementCounter == 6) {
           elementCounter = 0;
@@ -67,12 +66,30 @@ function browsItems() {
   // Fonctionnalités pour la page photographer :
   if (adressWeb.includes("photographer")) {
     const lightBox = document.querySelector("#lightBox");
+    const logo = document.querySelector(".logo");
+    const contactMe = document.querySelector(".contact_me_button");
+    const filter = document.querySelector("#filter");
+    const imageAndVideoContainerLink = document.querySelectorAll("#imageAndVideoContainer");
+    const AllLikeButton = document.querySelectorAll(".likeButton");
+    let elementCounter = 0;
+
     // Si la lighBox est absente
     if (lightBox == null) {
-      const logo = document.querySelector(".logo");
-      const contactMeButton = document.querySelector("#contact_me_button");
-      const filterPopularity = document.querySelector("#filter").value;
-      console.log(filterPopularity);
+      let allElements = [];
+      allElements.push(logo);
+      allElements.push(contactMe);
+      allElements.push(filter);
+      for (let i = 0; i < imageAndVideoContainerLink.length; i++) {
+        allElements.push(imageAndVideoContainerLink[i]);
+        allElements.push(AllLikeButton[i]);
+      }
+      console.log(allElements);
+      /*
+
+
+      -----ajouter les fonctionnalité ici !
+
+      */
     }
     // Si la lighBox est présente
     if (lightBox) {
