@@ -192,3 +192,12 @@ form input {
   border: none;
   border-radius: 5px;
 }
+
+/*
+----- SELECTION
+*/
+
+.selected {
+  box-shadow: 0px 0px 20px #07ff07;
+  text-shadow: 0px 0px 20px #07ff07;
+}

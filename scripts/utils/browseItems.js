@@ -16,10 +16,6 @@ function browsItems() {
           element.classList.add("imageContainer");
         });
 
-        allImagesOnPage.forEach((element) => {
-          element.classList.remove("imageContainerSelected");
-          element.classList.add("imageContainer");
-        });
         elementCounter--;
         if (elementCounter == 6) {
           elementCounter = 0;
@@ -40,10 +36,6 @@ function browsItems() {
           element.classList.add("imageContainer");
         });
 
-        allImagesOnPage.forEach((element) => {
-          element.classList.remove("imageContainerSelected");
-          element.classList.add("imageContainer");
-        });
         elementCounter++;
         if (elementCounter == 6) {
           elementCounter = 0;
@@ -72,9 +64,11 @@ function browsItems() {
     const imageAndVideoContainerLink = document.querySelectorAll("#imageAndVideoContainer");
     const AllLikeButton = document.querySelectorAll(".likeButton");
     let elementCounter = 0;
+    let selectedLink;
 
     // Si la lighBox est absente
     if (lightBox == null) {
+      // Rassemblement des éléments
       let allElements = [];
       allElements.push(logo);
       allElements.push(contactMe);
@@ -83,7 +77,31 @@ function browsItems() {
         allElements.push(imageAndVideoContainerLink[i]);
         allElements.push(AllLikeButton[i]);
       }
-      console.log(allElements);
+
+      document.addEventListener("keydown", (e) => {
+        if (elementCounter == allElements.length - 1) {
+          elementCounter = 0;
+        }
+        if (elementCounter == -1) {
+          elementCounter = allElements.length - 2;
+        }
+        if (e.code == "ArrowRight") {
+          allElements.forEach((element) => {
+            element.classList.remove("selected");
+          });
+          elementCounter++;
+        }
+        if (e.code == "ArrowLeft") {
+          allElements.forEach((element) => {
+            element.classList.remove("selected");
+          });
+          elementCounter--;
+        }
+        allElements[elementCounter].classList.add("selected");
+        selectedLink = allElements[elementCounter];
+
+        return selectedLink;
+      });
       /*
 
 
