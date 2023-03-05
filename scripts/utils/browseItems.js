@@ -81,7 +81,7 @@ function browsItems() {
         allElements.push(imageAndVideoContainerLink[i]);
         allElements.push(AllLikeButton[i]);
       }
-
+      let counterSelect = 0;
       document.addEventListener("keydown", (e) => {
         if (elementCounter == allElements.length - 1) {
           elementCounter = 0;
@@ -109,19 +109,19 @@ function browsItems() {
             selectedLink.click();
           }
         }
-        if (selectedLink.value == "Popularité") {
-          if (e.code == "Enter") {
-            selectedLink.value = filterOptionDate;
+        if (selectedLink == filter) {
+          if (e.code == "ArrowDown") {
+            counterSelect += 1;
+            if (counterSelect == 3) {
+              counterSelect = 0;
+            }
+            filter.selectedIndex = counterSelect;
+            filter.dispatchEvent(new Event("change"));
+            console.log(counterSelect);
           }
         }
         return selectedLink;
       });
-      /*
-
-
-      -----ajouter les fonctionnalité ici !
-
-      */
     }
     // Si la lighBox est présente
     if (lightBox) {
