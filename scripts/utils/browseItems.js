@@ -63,6 +63,10 @@ function browsItems() {
     const filter = document.querySelector("#filter");
     const imageAndVideoContainerLink = document.querySelectorAll("#imageAndVideoContainer");
     const AllLikeButton = document.querySelectorAll(".likeButton");
+    const filterOption = document.querySelectorAll("option");
+    const filterOptionPopularity = document.querySelectorAll("option")[0];
+    const filterOptionDate = document.querySelectorAll("option")[1];
+    const filterOptionTitre = document.querySelectorAll("option")[2];
     let elementCounter = 0;
     let selectedLink;
 
@@ -99,7 +103,17 @@ function browsItems() {
         }
         allElements[elementCounter].classList.add("selected");
         selectedLink = allElements[elementCounter];
-
+        console.log(selectedLink);
+        if (selectedLink.innerText == "❤") {
+          if (e.code == "Enter") {
+            selectedLink.click();
+          }
+        }
+        if (selectedLink.value == "Popularité") {
+          if (e.code == "Enter") {
+            selectedLink.value = filterOptionDate;
+          }
+        }
         return selectedLink;
       });
       /*
