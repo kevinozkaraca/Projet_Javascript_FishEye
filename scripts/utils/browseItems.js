@@ -63,10 +63,6 @@ function browsItems() {
     const filter = document.querySelector("#filter");
     const imageAndVideoContainerLink = document.querySelectorAll("#imageAndVideoContainer");
     const AllLikeButton = document.querySelectorAll(".likeButton");
-    const filterOption = document.querySelectorAll("option");
-    const filterOptionPopularity = document.querySelectorAll("option")[0];
-    const filterOptionDate = document.querySelectorAll("option")[1];
-    const filterOptionTitre = document.querySelectorAll("option")[2];
     let elementCounter = 0;
     let selectedLink;
 
@@ -81,6 +77,7 @@ function browsItems() {
         allElements.push(imageAndVideoContainerLink[i]);
         allElements.push(AllLikeButton[i]);
       }
+      console.log(allElements);
       let counterSelect = 0;
       document.addEventListener("keydown", (e) => {
         if (elementCounter == allElements.length - 1) {
@@ -117,7 +114,16 @@ function browsItems() {
             }
             filter.selectedIndex = counterSelect;
             filter.dispatchEvent(new Event("change"));
-            console.log(counterSelect);
+            const imageAndVideoContainerLink = document.querySelectorAll("#imageAndVideoContainer");
+            const AllLikeButton = document.querySelectorAll(".likeButton");
+            allElements.length = 0;
+            allElements.push(logo);
+            allElements.push(contactMe);
+            allElements.push(filter);
+            for (let i = 0; i < imageAndVideoContainerLink.length; i++) {
+              allElements.push(imageAndVideoContainerLink[i]);
+              allElements.push(AllLikeButton[i]);
+            }
           }
         }
         return selectedLink;
