@@ -69,6 +69,7 @@ function mediaFactory(data) {
           </div>         
             `;
           imagesContainer.appendChild(div1);
+          div1.setAttribute("id", "lightBoxContainer");
           div1.innerHTML = template;
           const lightBox = document.querySelector("#lightBox");
           const arrowLeft = document.querySelector("#arrowLeft");

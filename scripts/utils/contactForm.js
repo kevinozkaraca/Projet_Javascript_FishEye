@@ -26,6 +26,7 @@ async function formDisplay(e) {
        </div>
   `;
   const div2 = document.createElement("div");
+  div2.setAttribute("id", "modal_container");
   imagesContainer.insertAdjacentElement("afterend", div2);
   div2.innerHTML = template2;
 

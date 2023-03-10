@@ -156,12 +156,13 @@ article {
 */
 #likeAndPrice {
   position: fixed;
-  top: 93%;
+  top: 95%;
   left: 70%;
   background-color: #d3573c;
   display: flex;
   border-radius: 5px;
   z-index: 50;
+  z-index: 2;
 }
 #likeAndPrice p {
   margin-left: 12px;
@@ -175,35 +176,49 @@ article {
 /*
 ----- MODAL
 */
-
+#modal_container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: #ffffff;
+}
 #contact_modal {
   display: none;
+  padding-top: 55px;
+  padding-bottom: 100%;
+  z-index: 5;
+}
+#contact_modal_header div {
+  display: flex;
+  flex-wrap: wrap;
 }
 .modal {
   border-radius: 5px;
   background-color: #db8876;
   width: 50%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
   margin: auto;
 }
 
-.modal header {
+.modal_header {
   justify-content: space-between;
-  width: 100%;
 }
 
 .modal header img {
   cursor: pointer;
+  position: relative;
+  bottom: 50px;
+  left: 120px;
 }
 
 .modal header h2 {
   font-size: 64px;
   font-weight: normal;
-  text-align: center;
+  width: 80%;
+  margin: 0;
 }
 
 form {
@@ -232,7 +247,17 @@ form input {
   border: none;
   border-radius: 5px;
 }
-
+#btn_envoyer {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  width: 180px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
 /*
 ----- SELECTION
 */
@@ -240,4 +265,46 @@ form input {
 .selected {
   box-shadow: 0px 0px 20px #07ff07;
   text-shadow: 0px 0px 20px #07ff07;
+}
+/*
+----- LightBox
+*/
+#lightBoxContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff2c07;
+}
+#lightBox {
+  width: 100%;
+  padding-top: 55px;
+  z-index: 4;
+  height: 100%;
+}
+#lightBox #closeLightBox {
+  position: relative;
+  left: 90%;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  color: #901c1c;
+}
+#arrowsAndImages {
+  background-color: #07ffff;
+  width: 80%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: auto;
+  padding-right: auto;
+}
+#arrowsAndImages #arrowRight,
+#arrowsAndImages #arrowLeft {
+  font-size: 50px;
+}
+#imageOnLightBox {
+  width: 800px;
+  height: 800px;
 }
