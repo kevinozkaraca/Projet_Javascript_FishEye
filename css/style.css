@@ -61,7 +61,8 @@ h1 {
   border-radius: 50%;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0px 0px 20px #07ff07;
+  box-shadow: 0px 0px 0px 10px #0787ff;
+
   display: inline-block;
   overflow: hidden;
 }

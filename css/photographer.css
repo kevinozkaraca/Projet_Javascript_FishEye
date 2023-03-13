@@ -67,7 +67,7 @@ body {
   width: 200px;
   height: 200px;
   margin-top: 25px;
-  margin-left: 520px;
+  margin-left: 475px;
 }
 /*
 ----- FILTER
@@ -119,6 +119,11 @@ article {
   height: 400px;
   object-fit: cover;
 }
+#imageAndVideoContainer {
+  margin: 0;
+  padding: 0;
+  height: 400px;
+}
 .all_container {
   display: flex;
   flex-direction: column-reverse;
@@ -129,18 +134,26 @@ article {
   margin-bottom: 10px;
 }
 .text_container {
-  display: flex;
+  display: inline;
   justify-content: space-between;
   align-items: center;
   width: 400px;
   color: #901c1c;
+  width: 100%;
+}
+.text_container :nth-child(1) {
+  display: inline-block;
+  width: 85%;
 }
 .text_container :nth-child(2) {
-  font-weight: bold;
+  display: inline-block;
+  margin-right: 2%;
 }
-.text_container p {
-  text-align: end;
+.text_container :nth-child(3) {
+  display: inline-block;
+  width: 4%;
 }
+
 .likes {
   display: inline;
 }
@@ -271,8 +284,7 @@ form input {
 */
 
 .selected {
-  box-shadow: 0px 0px 20px #07ff07;
-  text-shadow: 0px 0px 20px #07ff07;
+  box-shadow: 0px 0px 0px 10px #0787ff;
 }
 /*
 ----- LightBox
