@@ -51,10 +51,9 @@
     scripts/factories/photographer.js. Vous devrez étendre cette factory
     function afin de générer tous les éléments nécessaires, et retourner
     les éléments du DOM associés.
-  - ❌ Les éléments du DOM ainsi que le HTML et CSS devront être écrits
-    afin d'assurer l'accessibilité : vous devrez surtout être vigilant sur les
-    déclarations alt et aria-label.
-  - ❌ Le début d'intégration CSS qui a été fait utilise flexbox et CSS grid,
+  - ✅ Les éléments du DOM ainsi que le HTML et CSS devront être écrits
+    afin d'assurer l'accessibilité : vous devrez surtout être vigilant sur les déclarations alt et aria-label.
+  - ✅ Le début d'intégration CSS qui a été fait utilise flexbox et CSS grid,
     n'hésitez pas à jeter un œil à leur documentation.
 
 - 4. ### Gérer la navigation entre la page accueil et la page photographe :
@@ -62,7 +61,7 @@
   - ✅ Votre page d'accueil finalisée
   - ❌ Le rapport AChecker de votre page
   - ✅ Le chargement des données correspondant à la page détaillée
-  - ❌ Attention à l'accessibilité de vos liens (aria-label, gérer le focus, etc.)
+  - ✅ Attention à l'accessibilité de vos liens (aria-label, gérer le focus, etc.)
   - ❌ Maintenant que vous avez finalisé votre page d'accueil, vous pouvez
     réaliser un rapport d'accessibilité avec un validateur d'accessibilité ou
     une checklist, et corriger votre code en fonction
@@ -85,7 +84,7 @@
   - ✅ Une modale qui s'affiche lorsque l'on clique sur "Contactez-moi".
   - ❌ La base de la modale est déjà présente dans la codebase. Vous
     devrez y ajouter la gestion du formulaire ainsi que le style manquant.
-  - ❌ Pas d’API complexe avec laquelle interagir ici pour envoyer le
+  - ✅ Pas d’API complexe avec laquelle interagir ici pour envoyer le
     contenu de votre formulaire. Un simple console.log des données
     entrées par l'utilisateur suffira à montrer que vous maîtrisez votre
     sujet.
@@ -125,7 +124,7 @@
   - ❌ Une fois votre page photographe finalisée, vous pouvez également
     réaliser un rapport d'accessibilité avec un validateur d'accessibilité ou
     une checklist, et corriger votre code en fonction.
-  - ❌ ⚠️ Attention à bien gérer l'accessibilité en permettant de sélectionner
+  - ✅ ⚠️ Attention à bien gérer l'accessibilité en permettant de sélectionner
     les éléments au clavier dans le menu déroulant.
 
 - 10. ### Vérifier le code avec un linter :

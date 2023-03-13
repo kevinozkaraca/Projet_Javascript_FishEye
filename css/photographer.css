@@ -25,7 +25,7 @@ body {
   display: flex;
 }
 .photographInfo {
-  width: 30%;
+  width: 35%;
   margin-left: 40px;
   padding: 0;
 }
@@ -179,6 +179,7 @@ article {
 #modal_container {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 3;
   background-color: #ffffff;
@@ -196,7 +197,7 @@ article {
 .modal {
   border-radius: 5px;
   background-color: #db8876;
-  width: 50%;
+  width: 590px;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
@@ -211,7 +212,7 @@ article {
   cursor: pointer;
   position: relative;
   bottom: 50px;
-  left: 120px;
+  left: 60px;
 }
 
 .modal header h2 {
@@ -220,7 +221,14 @@ article {
   width: 80%;
   margin: 0;
 }
-
+.modal input {
+  width: 97%;
+  font-size: 25px;
+  padding: 10px;
+}
+.modal :nth-child(8) {
+  height: 220px;
+}
 form {
   display: flex;
   width: 100%;
@@ -269,42 +277,51 @@ form input {
 /*
 ----- LightBox
 */
-#lightBoxContainer {
+
+#lightBox {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 3000px;
   background-color: #ff2c07;
-}
-#lightBox {
-  width: 100%;
-  padding-top: 55px;
-  z-index: 4;
-  height: 100%;
+  z-index: 6;
 }
 #lightBox #closeLightBox {
   position: relative;
-  left: 90%;
-  top: 10px;
+  left: 65%;
+  top: 100px;
   width: 50px;
   height: 50px;
+  fill: #901c1c;
+  stroke: #901c1c;
   color: #901c1c;
 }
+
 #arrowsAndImages {
+  margin-top: 120px;
   background-color: #07ffff;
-  width: 80%;
+  width: 1100px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding-left: auto;
-  padding-right: auto;
 }
 #arrowsAndImages #arrowRight,
 #arrowsAndImages #arrowLeft {
-  font-size: 50px;
+  font-size: 90px;
+  width: 33%;
+  text-align: center;
 }
 #imageOnLightBox {
-  width: 800px;
-  height: 800px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  transform: scale(1.5);
+}
+#lightBox h3 {
+  width: 50%;
+  margin-left: auto;
+  margin-top: 120px;
 }

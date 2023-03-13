@@ -28,7 +28,7 @@ function mediaFactory(data) {
         <p alt="likes" id="likes${counter}" class="likes">${likes} </p><p class="likeButton" id="likeButton${counter}">❤</p>
       </div>
       <a id="imageAndVideoContainer">
-        <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}" alt="${title}, closeup view" id="imageOnpage">
+        <${imageOrVideoBalise} src="./assets/${imageOrVideoLink}" alt="${title}, closeup view" id="imageAndVideoOnpage">
       </a>
     </div>
     `;
@@ -63,9 +63,10 @@ function mediaFactory(data) {
             <img src="assets/icons/close.svg" id="closeLightBox" alt="Close dialog">
             <div id="arrowsAndImages">
               <div id="arrowLeft" alt="Previous image">&lt</div>
-              <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox">
+              <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox" alt="${e.target.alt}">
               <div id="arrowRight" alt="Next image">&gt </div>
             </div>
+            <h3 id="lighBoxH3">${title}</h3>
           </div>         
             `;
           imagesContainer.appendChild(div1);
@@ -75,12 +76,15 @@ function mediaFactory(data) {
           const arrowLeft = document.querySelector("#arrowLeft");
           const arrowRight = document.querySelector("#arrowRight");
           const closeLightBox = document.querySelector("#closeLightBox");
-          const imageOnpage = document.querySelectorAll("#imageOnpage");
+          const imageAndVideoOnpage = document.querySelectorAll("#imageAndVideoOnpage");
           const imageOnLightBox = document.querySelector("#imageOnLightBox");
+          const lighBoxH3 = document.querySelector("#lighBoxH3");
+          const arrowsAndImages = document.querySelector("#arrowsAndImages");
           let createImgElement = document.createElement("img");
           let createVideoElement = document.createElement("video");
-          const lengthOfImageOnPage = imageOnpage.length - 1;
-          let counterOfImageOnPage = 0;
+          let createH3Element = document.createElement("h3");
+          const lengthOfimageAndVideoOnpage = imageAndVideoOnpage.length - 1;
+          let counterOfimageAndVideoOnpage = 0;
 
           lightBox.addEventListener("click", (e) => {
             e.preventDefault();
@@ -88,36 +92,46 @@ function mediaFactory(data) {
             // gestion de l'erreur en cas de video ou image
 
             if (e.target == arrowLeft) {
-              if (counterOfImageOnPage >= lengthOfImageOnPage) {
-                counterOfImageOnPage = 0;
+              if (counterOfimageAndVideoOnpage >= lengthOfimageAndVideoOnpage) {
+                counterOfimageAndVideoOnpage = 0;
               }
-              counterOfImageOnPage++;
+              counterOfimageAndVideoOnpage++;
 
-              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
+              imageOnLightBox.src = imageAndVideoOnpage[counterOfimageAndVideoOnpage].src;
             }
             if (e.target == arrowRight) {
-              if (counterOfImageOnPage <= 0) {
-                counterOfImageOnPage = lengthOfImageOnPage;
+              if (counterOfimageAndVideoOnpage <= 0) {
+                counterOfimageAndVideoOnpage = lengthOfimageAndVideoOnpage;
               }
-              counterOfImageOnPage--;
-              imageOnLightBox.src = imageOnpage[counterOfImageOnPage].src;
+              counterOfimageAndVideoOnpage--;
+              imageOnLightBox.src = imageAndVideoOnpage[counterOfimageAndVideoOnpage].src;
             }
 
             if (imageOnLightBox.src.includes("mp4")) {
               const imageOnLightBox = document.querySelector("#imageOnLightBox");
               imageOnLightBox.remove();
               arrowLeft.insertAdjacentElement("afterend", createVideoElement);
-              createVideoElement.setAttribute("src", imageOnpage[counterOfImageOnPage].src);
+              createVideoElement.setAttribute("src", imageAndVideoOnpage[counterOfimageAndVideoOnpage].src);
               createVideoElement.setAttribute("controls", true);
               createVideoElement.setAttribute("id", "imageOnLightBox");
+              createVideoElement.setAttribute("alt", imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt);
+              lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage];
+              /* 
+
+                ------------- CORRIGER BUG ICI ! !!!
+
+              */
+              console.log(imageAndVideoOnpage[counterOfimageAndVideoOnpage]);
             }
             if (imageOnLightBox.src.includes("jpg")) {
               const imageOnLightBox = document.querySelector("#imageOnLightBox");
               imageOnLightBox.remove();
               arrowLeft.insertAdjacentElement("afterend", createImgElement);
-              createImgElement.setAttribute("src", imageOnpage[counterOfImageOnPage].src);
+              createImgElement.setAttribute("src", imageAndVideoOnpage[counterOfimageAndVideoOnpage].src);
               createImgElement.setAttribute("controls", true);
               createImgElement.setAttribute("id", "imageOnLightBox");
+              createImgElement.setAttribute("alt", imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt);
+              lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt;
             }
             if (e.target == closeLightBox) {
               lightBox.remove();

@@ -77,7 +77,7 @@ function browsItems() {
         allElements.push(imageAndVideoContainerLink[i]);
         allElements.push(AllLikeButton[i]);
       }
-      console.log(allElements);
+
       let counterSelect = 0;
       document.addEventListener("keydown", (e) => {
         if (elementCounter == allElements.length - 1) {
@@ -100,7 +100,7 @@ function browsItems() {
         }
         allElements[elementCounter].classList.add("selected");
         selectedLink = allElements[elementCounter];
-        console.log(selectedLink);
+
         if (selectedLink.innerText == "❤") {
           if (e.code == "Enter") {
             selectedLink.click();
