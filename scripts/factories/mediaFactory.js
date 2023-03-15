@@ -115,13 +115,7 @@ function mediaFactory(data) {
               createVideoElement.setAttribute("controls", true);
               createVideoElement.setAttribute("id", "imageOnLightBox");
               createVideoElement.setAttribute("alt", imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt);
-              lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage];
-              /* 
-
-                ------------- CORRIGER BUG ICI ! !!!
-
-              */
-              console.log(imageAndVideoOnpage[counterOfimageAndVideoOnpage]);
+              lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage].getAttribute("alt").slice(0, -14);
             }
             if (imageOnLightBox.src.includes("jpg")) {
               const imageOnLightBox = document.querySelector("#imageOnLightBox");
@@ -131,7 +125,7 @@ function mediaFactory(data) {
               createImgElement.setAttribute("controls", true);
               createImgElement.setAttribute("id", "imageOnLightBox");
               createImgElement.setAttribute("alt", imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt);
-              lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt;
+              lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage].getAttribute("alt").slice(0, -14);
             }
             if (e.target == closeLightBox) {
               lightBox.remove();

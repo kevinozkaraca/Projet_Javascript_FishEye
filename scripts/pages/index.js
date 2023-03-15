@@ -1,5 +1,6 @@
 import photographerFactory from "../factories/photographerFactory.js";
 import browsItems from "../utils/browseItems.js";
+import tabindexIndex from "../utils/tabindexIndex.js";
 // Récupération des données du fichier JSON
 async function getPhotographers() {
   const response = await fetch("./data/photographers.json");
@@ -20,5 +21,6 @@ async function init() {
   const { photographers } = await getPhotographers();
   displayData(photographers);
   browsItems();
+  tabindexIndex();
 }
 init();
