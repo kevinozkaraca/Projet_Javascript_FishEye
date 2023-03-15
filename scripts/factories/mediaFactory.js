@@ -59,15 +59,18 @@ function mediaFactory(data) {
             imageOrVideoLink = data.image;
           }
           let template = `
-          <div id="lightBox" arial-label="image closeup view">
-            <img src="assets/icons/close.svg" id="closeLightBox" alt="Close dialog">
+          <div id="lightBox">
+          <div id="lightBoxClosUp" arial-label="image closeup view">
+            <p id="closeLightBox" alt="Close dialog">✖</p>
             <div id="arrowsAndImages">
               <div id="arrowLeft" alt="Previous image">&lt</div>
               <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox" alt="${e.target.alt}"></${imageOrVideoBalise}>
               <div id="arrowRight" alt="Next image">&gt</div>
             </div>
             <h3 id="lighBoxH3">${title}</h3>
-          </div>         
+          </div>
+          </div>
+                   
             `;
           imagesContainer.appendChild(div1);
           div1.setAttribute("id", "lightBoxContainer");

@@ -108,6 +108,7 @@ function browsItems() {
             selectedLink.click();
           }
         }
+
         if (selectedLink == filter) {
           if (e.code == "ArrowDown") {
             e.preventDefault();
