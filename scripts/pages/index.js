@@ -21,6 +21,5 @@ async function init() {
   const { photographers } = await getPhotographers();
   displayData(photographers);
   browsItems();
-  tabindexIndex();
 }
 init();

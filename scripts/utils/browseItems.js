@@ -30,7 +30,8 @@ function browsItems() {
       }
 
       // fonctions de la fleche droite
-      if (e.code == "ArrowRight") {
+      if (e.code == "ArrowRight" || e.code == "Tab") {
+        e.preventDefault();
         allImagesOnPage.forEach((element) => {
           element.classList.remove("imageContainerSelected");
           element.classList.add("imageContainer");
@@ -86,7 +87,8 @@ function browsItems() {
         if (elementCounter == -1) {
           elementCounter = allElements.length - 2;
         }
-        if (e.code == "ArrowRight") {
+        if (e.code == "ArrowRight" || e.code == "Tab") {
+          e.preventDefault();
           allElements.forEach((element) => {
             element.classList.remove("selected");
           });
@@ -108,6 +110,7 @@ function browsItems() {
         }
         if (selectedLink == filter) {
           if (e.code == "ArrowDown") {
+            e.preventDefault();
             counterSelect += 1;
             if (counterSelect == 3) {
               counterSelect = 0;
@@ -131,13 +134,15 @@ function browsItems() {
     }
     // Si la lighBox est présente
     if (lightBox) {
+      window.scrollTo(0, 0);
       document.addEventListener("keydown", (e) => {
         const arrowLeft = document.getElementById("arrowLeft");
         const arrowRight = document.getElementById("arrowRight");
         if (e.code == "ArrowLeft") {
           arrowLeft.click();
         }
-        if (e.code == "ArrowRight") {
+        if (e.code == "ArrowRight" || e.code == "Tab") {
+          e.preventDefault();
           arrowRight.click();
         }
         if (e.code == "Escape") {

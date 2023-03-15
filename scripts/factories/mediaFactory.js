@@ -63,8 +63,8 @@ function mediaFactory(data) {
             <img src="assets/icons/close.svg" id="closeLightBox" alt="Close dialog">
             <div id="arrowsAndImages">
               <div id="arrowLeft" alt="Previous image">&lt</div>
-              <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox" alt="${e.target.alt}">
-              <div id="arrowRight" alt="Next image">&gt </div>
+              <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox" alt="${e.target.alt}"></${imageOrVideoBalise}>
+              <div id="arrowRight" alt="Next image">&gt</div>
             </div>
             <h3 id="lighBoxH3">${title}</h3>
           </div>         
