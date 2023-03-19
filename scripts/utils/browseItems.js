@@ -30,7 +30,7 @@ function browsItems() {
       }
 
       // fonctions de la fleche droite
-      if (e.code == "ArrowRight" || e.code == "Tab") {
+      if (e.code == "ArrowRight" ) {
         e.preventDefault();
         allImagesOnPage.forEach((element) => {
           element.classList.remove("imageContainerSelected");
@@ -87,7 +87,7 @@ function browsItems() {
         if (elementCounter == -1) {
           elementCounter = allElements.length - 2;
         }
-        if (e.code == "ArrowRight" || e.code == "Tab") {
+        if (e.code == "ArrowRight") {
           e.preventDefault();
           allElements.forEach((element) => {
             element.classList.remove("selected");
@@ -142,7 +142,7 @@ function browsItems() {
         if (e.code == "ArrowLeft") {
           arrowLeft.click();
         }
-        if (e.code == "ArrowRight" || e.code == "Tab") {
+        if (e.code == "ArrowRight") {
           e.preventDefault();
           arrowRight.click();
         }

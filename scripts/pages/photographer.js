@@ -97,6 +97,6 @@ async function init() {
   const { media, photographers } = await getMedia();
   displayData(media, photographers);
   browsItems();
-  //tabindexPhotographer();
+  tabindexPhotographer();
 }
 init();

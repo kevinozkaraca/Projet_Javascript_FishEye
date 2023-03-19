@@ -4,6 +4,15 @@
     <a href= "https://kevinozkaraca.github.io/Projet_Javascript_FishEye/"> Voir le site !</a>
 </p>
 
+<img 
+            class="IMGlink"
+            src="./imagesReadme/equipeTurgut.jpg"
+            alt="Photo de l'équipe de travail"
+            aria-label="Photo de l'équipe de travail"
+            width= 90%
+        />
+</p>
+
 ## Instructions :
 
 - Notre objectif est de construire un prototype fonctionnel d'un nouveau site web que nous pourrons présenter à FishEye lors de notre prochaine réunion avec les clients.
