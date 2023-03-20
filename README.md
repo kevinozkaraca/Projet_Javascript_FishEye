@@ -6,11 +6,12 @@
 
 <img 
             class="IMGlink"
-            src="./imagesReadme/equipeTurgut.jpg"
-            alt="Photo de l'équipe de travail"
+            src="./assets/images/capture.png"
+            alt="Capture du site "
             aria-label="Photo de l'équipe de travail"
             width= 90%
         />
+
 </p>
 
 ## Instructions :
