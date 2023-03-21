@@ -83,17 +83,14 @@ function mediaFactory(data) {
           const imageOnLightBox = document.querySelector("#imageOnLightBox");
           const lighBoxH3 = document.querySelector("#lighBoxH3");
           const arrowsAndImages = document.querySelector("#arrowsAndImages");
-          
           let createImgElement = document.createElement("img");
           let createVideoElement = document.createElement("video");
           let createH3Element = document.createElement("h3");
-
           const lengthOfimageAndVideoOnpage = imageAndVideoOnpage.length - 1;
           let counterOfimageAndVideoOnpage = 0;
 
           lightBox.addEventListener("click", (e) => {
             e.preventDefault();
-
             // gestion de l'erreur en cas de video ou image
 
             if (e.target == arrowLeft) {
@@ -119,9 +116,10 @@ function mediaFactory(data) {
               createVideoElement.setAttribute("src", imageAndVideoOnpage[counterOfimageAndVideoOnpage].src);
               createVideoElement.setAttribute("controls", true);
               createVideoElement.setAttribute("id", "imageOnLightBox");
-              
+
               createVideoElement.setAttribute("alt", imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt);
               lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage].getAttribute("alt").slice(0, -14);
+
             }
             if (imageOnLightBox.src.includes("jpg")) {
               const imageOnLightBox = document.querySelector("#imageOnLightBox");
@@ -130,9 +128,10 @@ function mediaFactory(data) {
               createImgElement.setAttribute("src", imageAndVideoOnpage[counterOfimageAndVideoOnpage].src);
               createImgElement.setAttribute("controls", true);
               createImgElement.setAttribute("id", "imageOnLightBox");
-              
+
               createImgElement.setAttribute("alt", imageAndVideoOnpage[counterOfimageAndVideoOnpage].alt);
               lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage].getAttribute("alt").slice(0, -14);
+
             }
             if (e.target == closeLightBox) {
               lightBox.remove();

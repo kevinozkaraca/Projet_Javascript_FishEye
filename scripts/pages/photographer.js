@@ -29,6 +29,7 @@ async function displayData(media, photographers) {
             const mediaModel = mediaFactory(media[i]);
             const userMediaDom = mediaModel.getMediaCardDOM();
             imagesContainer.appendChild(userMediaDom);
+
           }
         }
         if (filter.value == "Title") {
@@ -39,6 +40,7 @@ async function displayData(media, photographers) {
             const mediaModel = mediaFactory(media[i]);
             const userMediaDom = mediaModel.getMediaCardDOM();
             imagesContainer.appendChild(userMediaDom);
+
           }
         }
         if (filter.value == "Date") {
@@ -49,8 +51,17 @@ async function displayData(media, photographers) {
             const mediaModel = mediaFactory(media[i]);
             const userMediaDom = mediaModel.getMediaCardDOM();
             imagesContainer.appendChild(userMediaDom);
+
           }
         }
+        const imageAndVideoContainer = document.querySelectorAll("#imageAndVideoContainer");
+        imageAndVideoContainer.forEach((element) => {
+          element.setAttribute("tabindex", "4");
+        })
+        const likeButton = document.querySelectorAll(".likeButton")
+        likeButton.forEach((element) => {
+          element.setAttribute("tabindex", "4");
+        })
       });
     }
   }
@@ -74,8 +85,8 @@ async function displayData(media, photographers) {
           <p>${photographers[i].tagline}</p>
           </div>
           <button class="contact_me_button" alt="contact_me">Contactez-moi</button> <img src="./assets/${photographers[
-            i
-          ].name.replace(/[\s-]+/g, "")}.jpg" alt="${photographers[i].name}"/>
+          i
+        ].name.replace(/[\s-]+/g, "")}.jpg" alt="${photographers[i].name}"/>
         <div id="likeAndPrice">
           <p id="allLikesCounter" arial-label="likes">${allLikesCounter} </p>
           <p>❤</p>

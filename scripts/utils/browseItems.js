@@ -3,13 +3,9 @@ function browsItems() {
   const adressWeb = window.location.href;
   // Fonctionnalités pour la page photographer :
   if (adressWeb.includes("photographer")) {
-    const lightBox = document.querySelector("#lightBox");
-    console.log(lightBox)
+    let lightBox = document.querySelector("#lightBox");
     // Si la lighBox est présente
     if (lightBox != null) {
-      console.log(lightBox) 
-      console.log("blcok")
-      window.scrollTo(0, 0);
       document.addEventListener("keydown", (e) => {
         e.preventDefault()
         const arrowLeft = document.getElementById("arrowLeft");
@@ -22,12 +18,19 @@ function browsItems() {
           arrowRight.click();
         }
         if (e.code == "Escape") {
-          lightBox.remove();
+          lightBox.remove()
+
         }
-        if (e.code == "Enter"){
-          console.log("ok")        
+        if (e.code == "Enter") {
+          console.log("ok")
         }
       });
+    } else {
+      const imageAndVideoContainer = document.querySelectorAll("#imageAndVideoContainer");
+      imageAndVideoContainer.forEach((element) => {
+        element.setAttribute("tabindex", "4");
+      })
+
     }
   }
 }
