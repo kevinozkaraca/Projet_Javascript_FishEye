@@ -6,10 +6,11 @@
 
 <img 
             class="IMGlink"
-            src="assets\capture.png"
+            src="assets\capture.jpg"
             alt="Capture du site "
             aria-label="Photo de l'équipe de travail"
             width= 90%
+            align="center"
         />
 
 </p>
