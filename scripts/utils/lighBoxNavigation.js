@@ -29,10 +29,7 @@ function lighBoxNavigation() {
   window.scrollTo(0, 0);
   let lightBoxContainer = document.querySelector("#lightBoxContainer")
   // Si la lighBox est présente
-  console.log('La fonction est lancée')
-  console.log(lightBoxContainer)
   if (lightBoxContainer != null) {
-
     document.addEventListener("keydown", maFonction);
   } else {
     document.removeEventListener("keydown", maFonction)
