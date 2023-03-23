@@ -1,4 +1,4 @@
-import lighBoxNavigation from "../utils/lighBoxNavigation.js"
+import lighBoxNavigation from "../utils/lighBoxNavigation.js";
 let counter = 0;
 function mediaFactory(data) {
   // Récupération des données du fichiers JSON dans des variable
@@ -75,6 +75,7 @@ function mediaFactory(data) {
             `;
           imagesContainer.appendChild(div1);
           div1.setAttribute("id", "lightBoxContainer");
+          lighBoxNavigation()
           div1.innerHTML = template;
           let lightBox = document.querySelector("#lightBox");
           const arrowLeft = document.querySelector("#arrowLeft");
@@ -87,7 +88,9 @@ function mediaFactory(data) {
           let createVideoElement = document.createElement("video");
           const lengthOfimageAndVideoOnpage = imageAndVideoOnpage.length - 1;
           let counterOfimageAndVideoOnpage = 0;
-          lighBoxNavigation()
+          let lightBoxContainer = document.querySelector("#lightBoxContainer")
+
+          //navigation dans la lightbox avec la souris
           lightBox.addEventListener("click", (e) => {
             e.preventDefault();
             // gestion de l'erreur en cas de video ou image
@@ -130,7 +133,8 @@ function mediaFactory(data) {
               lighBoxH3.innerHTML = imageAndVideoOnpage[counterOfimageAndVideoOnpage].getAttribute("alt").slice(0, -14);
             }
             if (e.target == closeLightBox) {
-              lightBox.remove()
+              lightBoxContainer.remove()
+              lighBoxNavigation()
             }
           });
         }
