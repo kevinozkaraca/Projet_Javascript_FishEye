@@ -19,9 +19,13 @@ function maFonction(e) {
     lighBoxNavigation()
   }
   if (e.code == "Enter") {
-    console.log(lighBoxH3);
+    const imageOnLightBox = document.querySelector("#imageOnLightBox")
+    const arrowsAndImages = document.querySelector("#arrowsAndImages")
+    console.log(imageOnLightBox)
     // PLay en cas de vidéo
-
+    if (arrowsAndImages.innerHTML.includes("video")) {
+      imageOnLightBox.play()
+    }
   }
 }
 // fonction pour parcourir les éléments du site
@@ -33,9 +37,7 @@ function lighBoxNavigation() {
     document.addEventListener("keydown", maFonction);
   } else {
     document.removeEventListener("keydown", maFonction)
-
   }
-
 }
 
 export default lighBoxNavigation;
