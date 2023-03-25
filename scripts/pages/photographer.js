@@ -1,6 +1,7 @@
 import mediaFactory from "../factories/mediaFactory.js";
 import formDisplay from "../utils/contactForm.js";
 import tabindexPhotographer from "../utils/tabindexPhotographer.js";
+import modalNavigation from "../utils/modalNavigation.js";
 // Récupération des informations du lien de la page :
 const params = new URLSearchParams(window.location.search);
 const photographerId = params.get("id");
@@ -107,6 +108,6 @@ async function init() {
   const { media, photographers } = await getMedia();
   displayData(media, photographers);
   tabindexPhotographer();
-
+  modalNavigation();
 }
 init();

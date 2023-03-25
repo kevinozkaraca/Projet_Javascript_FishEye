@@ -1,3 +1,5 @@
+import modalNavigation from "./modalNavigation.js";
+
 async function formDisplay(e) {
   const imagesContainer = document.querySelector(".images-container");
   const template2 = `
@@ -29,14 +31,15 @@ async function formDisplay(e) {
   div2.setAttribute("id", "modal_container");
   imagesContainer.insertAdjacentElement("afterend", div2);
   div2.innerHTML = template2;
-
   const contact_me_button = document.querySelector(".contact_me_button");
   contact_me_button.addEventListener("click", function () {
     contact_modal.style.display = "block";
+    modalNavigation()
   });
   const closeModalCross = document.querySelector("#closeModalCross");
   closeModalCross.addEventListener("click", function () {
     contact_modal.style.display = "none";
+    modalNavigation()
   });
   const contact_button = document.querySelector(".contact_button");
   const contact_modal = document.querySelector("#contact_modal");
