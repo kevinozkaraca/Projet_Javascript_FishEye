@@ -22,7 +22,7 @@ function photographerFactory(data) {
       <p>${tagline}</p>
       <p>${price} €/jour</p>
     </div>
-  </article>`;
+    </article>`;
     article.appendChild(div1);
     div1.innerHTML = template;
 

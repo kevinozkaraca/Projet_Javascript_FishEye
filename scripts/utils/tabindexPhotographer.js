@@ -11,7 +11,7 @@ function tabindexPhotographer() {
   tabindexArray.push(tabindexLogo);
   tabindexArray.push(contactMe);
   tabindexArray.push(filter);
-  
+
   for (let i = 0; i <= tabindexPhotographerIMG.length - 1; i++) {
     tabindexArray.push(tabindexPhotographerIMG[i].setAttribute("tabindex", `4`));
     tabindexArray.push(tabindexLikes[i].setAttribute("tabindex", `4`));
