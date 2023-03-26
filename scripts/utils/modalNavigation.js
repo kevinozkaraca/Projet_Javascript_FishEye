@@ -7,6 +7,9 @@ function maFonctionModal(e) {
     const btn_envoyer = document.querySelector("#btn_envoyer");
     const closeModalCross = document.querySelector("#closeModalCross");
     if (e.code == "ArrowDown" || e.code == "Tab") {
+        if (counter == allInputModal.length) {
+            counter = 0;
+        }
         allInputModal[counter].focus();
         counter++;
     }

@@ -15,13 +15,11 @@ function maFonction(e) {
   }
   if (e.code == "Escape") {
     lightBoxContainer.remove()
-    console.log(lightBoxContainer)
     lighBoxNavigation()
   }
   if (e.code == "Enter") {
     const imageOnLightBox = document.querySelector("#imageOnLightBox")
     const arrowsAndImages = document.querySelector("#arrowsAndImages")
-    console.log(imageOnLightBox)
     // PLay en cas de vidéo
     if (arrowsAndImages.innerHTML.includes("video")) {
       imageOnLightBox.play()
