@@ -15,7 +15,7 @@ function fadeInAllElements() {
     });
     let opacity = 0;
     function fadeIn() {
-      opacity += 0.05;
+      opacity += 0.5;
       elements.forEach(element => {
         element.style.opacity = opacity;
       });

@@ -11,21 +11,24 @@ async function formDisplay(e) {
                <img src="assets/icons/close.svg" id="closeModalCross" alt="Close Contact form"/>
              </div>
            </header>
-           <form method="get">
-             <div>
-               <label>Prénom</label>
-               <input id="firstname" alt="First name" />
-               <label>Nom</label>
-               <input id="lastname" alt="Last name"/>
-               <label>Email</label>
-               <input id="email" alt="Email"/>
-               <label>Votre message</label>
-               <input id="message" alt="Your Message"/>
-             </div>
+            <form method="get">
+              <div>
+                <label for="firstname">Prénom</label>
+                <input id="firstname" alt="First name" />
+           
+                <label for="lastname">Nom</label>
+                <input id="lastname" alt="Last name"/>
+           
+                <label for="email">Email</label>
+                <input id="email" alt="Email"/>
+           
+                <label for="message">Votre message</label>
+                <input id="message" alt="Your Message"/>
+              </div>
              <button class="contact_button" id="btn_envoyer" alt="Send">Envoyer</button>
-           </form>
-         </div>
-       </div>
+            </form>
+          </div>
+        </div>
   `;
   const div2 = document.createElement("div");
   div2.setAttribute("id", "modal_container");
