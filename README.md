@@ -1,9 +1,5 @@
 # Projet de formation
 
-<p align="center">
-    <a href= "https://kevinozkaraca.github.io/Projet_Javascript_FishEye/"> Voir le site !</a>
-</p>
-
 <img 
             class="IMGlink"
             src="assets\capture.jpg"
