@@ -15,7 +15,19 @@ function tabindexPhotographer() {
   for (let i = 0; i <= tabindexPhotographerIMG.length - 1; i++) {
     tabindexArray.push(tabindexPhotographerIMG[i].setAttribute("tabindex", `4`));
     tabindexArray.push(tabindexLikes[i].setAttribute("tabindex", `4`));
+    tabindexLikes[i].addEventListener("focus", (element1) => {
+      document.addEventListener("keydown", (element2) => {
+
+        if (element2.code == "Enter") {
+          tabindexLikes[i].click();
+        }
+      })
+    })
   }
+
+
+
+
   return tabindexArray;
 }
 export default tabindexPhotographer;

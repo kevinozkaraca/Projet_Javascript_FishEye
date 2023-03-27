@@ -10,6 +10,7 @@ function tabindexIndex() {
   for (let i = -1; i == tabindexArray.length - 1; i++) {
     tabindexArray[i].setAttribute("tabindex", `${i}`);
   }
+
   return tabindexArray;
 }
 export default tabindexIndex;
