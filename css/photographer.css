@@ -78,9 +78,11 @@ body {
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
+  height: 60px;
 }
-.filter-container p {
+.filter-container label {
   margin-right: 25px;
+  align-self: center;
 }
 .filter-container select {
   background-color: #901c1c;
@@ -89,13 +91,15 @@ body {
   font-size: large;
   border: none;
 }
-.filter-container select option {
+.filter-container option {
   background-color: #901c1c;
   color: #fafafa;
   font-weight: bold;
   font-size: large;
   padding: 12px;
   border-bottom: #fafafa 2px;
+  height: 60px;
+  padding: 20px;
 }
 
 /*
