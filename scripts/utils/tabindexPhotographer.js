@@ -5,10 +5,15 @@ function tabindexPhotographer() {
   const tabindexPhotographerIMG = document.querySelectorAll("#imageAndVideoContainer");
   const tabindexLikes = document.querySelectorAll(".likeButton");
   const imageAndVideoOnpage = document.querySelectorAll("#imageAndVideoOnpage");
+  const optionsFilter = document.querySelectorAll("option");
   let tabindexArray = [];
   tabindexLogo.setAttribute("tabindex", "1");
   contactMe.setAttribute("tabindex", "2");
   filter.setAttribute("tabindex", "3");
+  filter.setAttribute("aria-label", "filter");
+  optionsFilter[0].setAttribute("aria-label", "filter by popularity");
+  optionsFilter[1].setAttribute("aria-label", "filter by title");
+  optionsFilter[2].setAttribute("aria-label", "filter by date");
   tabindexArray.push(tabindexLogo);
   tabindexArray.push(contactMe);
   tabindexArray.push(filter);
