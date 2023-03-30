@@ -14,6 +14,7 @@ function maFonctionModal(e) {
     }
     if (e.code == "Enter") {
         // Envoie du formulaire
+        e.preventDefault();
         btn_envoyer.click();
     }
     if (e.code == "Escape") {
