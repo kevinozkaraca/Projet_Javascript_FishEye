@@ -1,12 +1,11 @@
 let counter = 0;
 // Fonctionnalité en cas de la modal
 function maFonctionModal(e) {
-    e.preventDefault();
-    let modal_container = document.querySelector("#modal_container");
     const allInputModal = document.querySelectorAll("input");
     const btn_envoyer = document.querySelector("#btn_envoyer");
     const closeModalCross = document.querySelector("#closeModalCross");
     if (e.code == "ArrowDown" || e.code == "Tab") {
+        e.preventDefault();
         if (counter == allInputModal.length) {
             counter = 0;
         }
