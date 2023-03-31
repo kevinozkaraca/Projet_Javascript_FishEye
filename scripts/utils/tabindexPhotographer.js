@@ -29,14 +29,18 @@ function tabindexPhotographer() {
       })
     })
     tabindexPhotographerIMG[i].addEventListener("focus", () => {
-      document.addEventListener("keydown", (element1) => {
-        if (element1.code == "Enter") {
-          imageAndVideoOnpage[i].click();
-          console.log(tabindexPhotographerIMG[i]);
-        }
-      })
+      let lightBoxContainer = document.querySelector("#lightBoxContainer")
+      if (lightBoxContainer != null) {
+        document.addEventListener("keydown", (element1) => {
+          if (element1.code == "Enter") {
+            imageAndVideoOnpage[i].click();
+            console.log(tabindexPhotographerIMG[i]);
+          }
+        })
+      }
     })
   }
+
 
 
 
