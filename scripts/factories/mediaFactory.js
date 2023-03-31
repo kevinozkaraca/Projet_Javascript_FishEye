@@ -63,11 +63,11 @@ function mediaFactory(data) {
           let template = `
           <div id="lightBox">
           <div id="lightBoxClosUp" arial-label="image closeup view">
-            <p id="closeLightBox" alt="Close dialog">✖</p>
+            <p id="closeLightBox" alt="Close dialog" arial-label="Close">✖</p>
             <div id="arrowsAndImages">
-              <div id="arrowLeft" alt="Previous image">&lt</div>
+              <div id="arrowLeft" alt="Previous image" arial-label="Previous image">&lt</div>
               <${imageOrVideoBalise} src ="${e.target.src}" id="imageOnLightBox" alt="${e.target.alt}"></${imageOrVideoBalise}>
-              <div id="arrowRight" alt="Next image">&gt</div>
+              <div id="arrowRight" alt="Next image" arial-label="Next image">&gt</div>
             </div>
             <h3 id="lighBoxH3">${title}</h3>
           </div>
