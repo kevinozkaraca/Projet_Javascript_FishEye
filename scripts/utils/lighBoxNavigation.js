@@ -15,6 +15,7 @@ function maFonction(e) {
   }
   if (e.code == "Escape") {
     lightBoxContainer.remove()
+    console.log(lightBoxContainer)
     lighBoxNavigation()
     console.log(lightBoxContainer.style.display)
   }
@@ -31,11 +32,9 @@ function maFonction(e) {
 function lighBoxNavigation() {
   let lightBoxContainer = document.querySelector("#lightBoxContainer")
   // Si la lighBox est présente
-  if (lightBoxContainer != null) {
-
+  if (lightBoxContainer !== null) {
     document.addEventListener("keydown", maFonction);
   } else {
-
     document.removeEventListener("keydown", maFonction)
   }
 }

@@ -22,7 +22,6 @@ function tabindexPhotographer() {
     tabindexArray.push(tabindexPhotographerIMG[i].setAttribute("tabindex", `4`));
     tabindexArray.push(tabindexLikes[i].setAttribute("tabindex", `4`));
     tabindexLikes[i].addEventListener("focus", (e) => {
-
       document.addEventListener("keydown", (element2) => {
         if (element2.code == "Enter") {
           e.preventDefault();
