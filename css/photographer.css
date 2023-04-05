@@ -122,6 +122,7 @@ article {
   width: 400px;
   height: 400px;
   object-fit: cover;
+  cursor: pointer;
 }
 #imageAndVideoContainer {
   margin: 0;

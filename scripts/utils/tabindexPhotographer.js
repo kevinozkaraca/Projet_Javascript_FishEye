@@ -1,3 +1,5 @@
+
+
 function tabindexPhotographer() {
   const tabindexLogo = document.querySelector(".logoLink");
   const contactMe = document.querySelector(".contact_me_button");
@@ -21,30 +23,52 @@ function tabindexPhotographer() {
   for (let i = 0; i <= tabindexPhotographerIMG.length - 1; i++) {
     tabindexArray.push(tabindexPhotographerIMG[i].setAttribute("tabindex", `4`));
     tabindexArray.push(tabindexLikes[i].setAttribute("tabindex", `4`));
-    tabindexLikes[i].addEventListener("focus", (e) => {
+    tabindexLikes[i].addEventListener("focus", () => {
       document.addEventListener("keydown", (element2) => {
-        if (element2.code == "Enter") {
-          e.preventDefault();
+        if (element2.code == "Space") {
+          element2.preventDefault();
           tabindexLikes[i].click();
+
         }
       })
     })
     tabindexPhotographerIMG[i].addEventListener("focus", (e) => {
       document.addEventListener("keydown", (element1) => {
         if (element1.code == "Enter") {
-          e.preventDefault();
           const imageAndVideoOnpage = document.querySelectorAll("#imageAndVideoOnpage");
           imageAndVideoOnpage[i].click();
+          window.scrollTo(0, 0);
+          // Fonctionnalité en cas de lightbox
+          if (lightBoxContainer != null) {
+            let lightBoxContainer = document.querySelector("#lightBoxContainer")
+            const arrowLeft = document.getElementById("arrowLeft");
+            const arrowRight = document.getElementById("arrowRight");
+            if (e.code == "ArrowLeft" || e.code == "Tab") {
+              e.preventDefault()
+              window.scrollTo(0, 0);
+              arrowLeft.click();
+            }
+            if (e.code == "ArrowRight") {
+              arrowRight.click();
+            }
+            if (e.code == "Escape") {
+              lightBoxContainer.remove()
+
+            }
+            if (e.code == "Enter") {
+              const imageOnLightBox = document.querySelector("#imageOnLightBox")
+              const arrowsAndImages = document.querySelector("#arrowsAndImages")
+              // PLay en cas de vidéo
+              if (arrowsAndImages.innerHTML.includes("video")) {
+                imageOnLightBox.play()
+              }
+            }
+          }
         }
       })
 
     })
   }
-
-
-
-
-
   return tabindexArray;
 }
 export default tabindexPhotographer;

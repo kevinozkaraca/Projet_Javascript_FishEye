@@ -1,7 +1,6 @@
 
 // Fonctionnalité en cas de lightbox
 function maFonction(e) {
-  e.preventDefault();
   let lightBoxContainer = document.querySelector("#lightBoxContainer")
   const arrowLeft = document.getElementById("arrowLeft");
   const arrowRight = document.getElementById("arrowRight");

@@ -19,7 +19,6 @@ function maFonctionModal(e) {
     }
     if (e.code == "Escape") {
         e.preventDefault();
-
         // Envoie du formulaire
         closeModalCross.click();
 
