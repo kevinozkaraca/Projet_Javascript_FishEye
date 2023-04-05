@@ -9,6 +9,7 @@ function tabindexPhotographer() {
   const imageAndVideoOnpage = document.querySelectorAll("#imageAndVideoOnpage");
   const optionsFilter = document.querySelectorAll("option");
   const likeButton = document.querySelectorAll(".likeButton");
+  const contact_me_button = document.querySelector(".contact_me_button");
   let tabindexArray = [];
   tabindexLogo.setAttribute("tabindex", "1");
   contactMe.setAttribute("tabindex", "2");
@@ -28,46 +29,31 @@ function tabindexPhotographer() {
         if (element2.code == "Space") {
           element2.preventDefault();
           tabindexLikes[i].click();
-
         }
       })
     })
     tabindexPhotographerIMG[i].addEventListener("focus", (e) => {
+      e.preventDefault();
       document.addEventListener("keydown", (element1) => {
         if (element1.code == "Enter") {
           const imageAndVideoOnpage = document.querySelectorAll("#imageAndVideoOnpage");
           imageAndVideoOnpage[i].click();
           window.scrollTo(0, 0);
-          // Fonctionnalité en cas de lightbox
-          if (lightBoxContainer != null) {
-            let lightBoxContainer = document.querySelector("#lightBoxContainer")
-            const arrowLeft = document.getElementById("arrowLeft");
-            const arrowRight = document.getElementById("arrowRight");
-            if (e.code == "ArrowLeft" || e.code == "Tab") {
-              e.preventDefault()
-              window.scrollTo(0, 0);
-              arrowLeft.click();
-            }
-            if (e.code == "ArrowRight") {
-              arrowRight.click();
-            }
-            if (e.code == "Escape") {
-              lightBoxContainer.remove()
-
-            }
-            if (e.code == "Enter") {
-              const imageOnLightBox = document.querySelector("#imageOnLightBox")
-              const arrowsAndImages = document.querySelector("#arrowsAndImages")
-              // PLay en cas de vidéo
-              if (arrowsAndImages.innerHTML.includes("video")) {
-                imageOnLightBox.play()
-              }
-            }
-          }
         }
-      })
-
+      }
+      )
     })
+    // contact_me_button.addEventListener("focus", (e) => {
+    //   e.preventDefault();
+    //   document.addEventListener("keydown", (element1) => {
+    //     if (element1.code == "Enter") {
+    //       contact_me_button.click();
+    //       window.scrollTo(0, 0);
+    //     }
+    //   }
+    //   )
+    // })
+
   }
   return tabindexArray;
 }

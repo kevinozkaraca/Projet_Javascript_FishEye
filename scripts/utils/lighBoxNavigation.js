@@ -4,21 +4,22 @@ function maFonction(e) {
   let lightBoxContainer = document.querySelector("#lightBoxContainer")
   const arrowLeft = document.getElementById("arrowLeft");
   const arrowRight = document.getElementById("arrowRight");
-  if (e.code == "ArrowLeft" || e.code == "Tab") {
+  if (e.code == "ArrowLeft" || e.code == "Tab" && lightBoxContainer !== null) {
     window.scrollTo(0, 0);
     e.preventDefault();
     arrowLeft.click();
   }
-  if (e.code == "ArrowRight") {
+  if (e.code == "ArrowRight" && lightBoxContainer !== null) {
     arrowRight.click();
   }
-  if (e.code == "Escape") {
+  if (e.code == "Escape" && lightBoxContainer !== null) {
     lightBoxContainer.remove()
-    console.log(lightBoxContainer)
+    lightBoxContainer = null
+    const contact_modal = document.querySelector("#contact_modal")
+    contact_modal.display.style = "none"
     lighBoxNavigation()
-    console.log(lightBoxContainer.style.display)
   }
-  if (e.code == "Enter") {
+  if (e.code == "Enter" && lightBoxContainer !== null) {
     const imageOnLightBox = document.querySelector("#imageOnLightBox")
     const arrowsAndImages = document.querySelector("#arrowsAndImages")
     // PLay en cas de vidéo
@@ -34,7 +35,7 @@ function lighBoxNavigation() {
   if (lightBoxContainer !== null) {
     document.addEventListener("keydown", maFonction);
   } else {
-    document.removeEventListener("keydown", maFonction)
+    document.removeEventListener("keydown", maFonction);
   }
 }
 
