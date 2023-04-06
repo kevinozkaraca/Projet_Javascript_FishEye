@@ -20,6 +20,7 @@ function maFonction(e) {
     lighBoxNavigation()
   }
   if (e.code == "Enter" && lightBoxContainer !== null) {
+    e.stopPropagation();
     const imageOnLightBox = document.querySelector("#imageOnLightBox")
     const arrowsAndImages = document.querySelector("#arrowsAndImages")
     // PLay en cas de vidéo

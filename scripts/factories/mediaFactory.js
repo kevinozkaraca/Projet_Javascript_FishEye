@@ -135,6 +135,7 @@ function mediaFactory(data) {
             if (e.target == closeLightBox) {
               lightBoxContainer.remove()
               lighBoxNavigation()
+
             }
           });
         }
