@@ -39,6 +39,10 @@ function mediaFactory(data) {
 
       // Ajout d'un like
       if (e.target.innerHTML == "❤") {
+        let likeButton = document.querySelector(`#likeButton${e.target.id.slice(10, 13)}`);
+        console.log(likeButton)
+        likeButton.style.color = "white";
+        likeButton.style.textShadow = "0 0 7px red";
         let likePlus = document.getElementById(`likes${e.target.id.slice(10, 13)}`);
         let alllikePlus = document.getElementById("allLikesCounter");
         likePlus.innerText = +likePlus.innerText + likeCounter;
